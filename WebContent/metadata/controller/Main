@@ -1,0 +1,134 @@
+{
+    "id": "ExtBox1-ext-gen11849",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main"
+    },
+    "customConfigs": [],
+    "designerId": "7faf914b-5d22-4c1e-bb5f-713a4d631df5",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen12204",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "#MainView",
+                "designer|userClassName": "mainView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12822",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "tweetList",
+                "selector": "#TweetList",
+                "designer|userClassName": "tweetList"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13391",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "backButton",
+                "selector": "#Back",
+                "designer|userClassName": "backButton"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13783",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "tweetPreview",
+                "selector": "#TweetPreview",
+                "designer|userClassName": "tweetPreview"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14303",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "button.hide();\r",
+                    "\r",
+                    "this.getMainView().animateActiveItem(0, { type: \"slide\",  direction: \"right\" });\r",
+                    "\r",
+                    "this.getTweetList().deselectAll();\r",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "[action=back]",
+                "designer|userClassName": "onButtonTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen15448",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "this.getMainView().animateActiveItem(1, { type: \"fade\", direction: \"left\" });\r",
+                    "\r",
+                    "this.getBackButton().show();\r",
+                    "\r",
+                    "this.getTweetPreview().setData(record.data);\r",
+                    ""
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "#TweetList",
+                "designer|userClassName": "onListItemTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

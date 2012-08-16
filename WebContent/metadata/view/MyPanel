@@ -1,0 +1,99 @@
+{
+    "id": "ExtBox1-ext-gen6002",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "id": "MainView",
+        "layout": "card",
+        "designer|userClassName": "MyPanel"
+    },
+    "customConfigs": [],
+    "designerId": "5be2f38c-fbd3-4ef6-a78c-ac03ebc4211e",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen6346",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "twitter feed",
+                "designer|userClassName": "MyToolbar"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen10785",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "Back",
+                        "ui": "back",
+                        "text": "Back",
+                        "designer|userClassName": "MyButton",
+                        "action": "back"
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "action",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen6702",
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "TweetList",
+                "itemTpl": "<div style=\"float:left; width: 60px;\">\n  <img src=\"{profile_image_url}\">\n</div>\n<div style=\"margin-left: 62px;\">\n  {text}<br>{created_at:date(\"d M Y\")}\n</div>",
+                "store": "Tweets",
+                "designer|userClassName": "MyList"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9545",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "TweetPreview",
+                "padding": "12px",
+                "tpl": "<div style=\"float: left; width: 60px;\"><img src=\"{profile_image_url}\" /></div><div style=\"position: relative; margin-left: 64px;\">\n     {name}\n     <br />\n     <div style=\"color: gray; font-size: 80%;\">\n{description}</div>\n</div>\n\n<div style=\"clear: both; margin-top: 6px; bacground-color: white; padding: 6px; border-radius: 10px;\">\n  {text}\n  <br />\n  <div style=\"color: gray; font-size: 80%; padding-top: 6px;\">Posted: {created_at:date(\"d M Y h:m\")}</div>\n</div>",
+                "scrollable": true,
+                "designer|userClassName": "MyPanel1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
