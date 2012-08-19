@@ -1,15 +1,15 @@
 var itemFactory = new Array();
-var addItem = function(idx){
+var addIntroItem = function(idx){
 	var item = {
 			xtype : "dataview",
 			scrollable : false,
-			store: "Tweets",
-			itemTpl : ' <div><tpl if="xindex=='+idx+'">{text}</tpl>{xindex}</div>'
+			store: "introduceImageListStore",
+			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" /></tpl></div>'
 	};
 	return item;
 };/*init carousel page*/ 
 for(var idx=1; idx < 6; idx++ ){
-	itemFactory.push(addItem(idx));
+	itemFactory.push(addIntroItem(idx));
 }
 Ext.define("GNApp.view.IntroduceView",{
 			extend : 'Ext.Panel',
@@ -28,18 +28,14 @@ Ext.define("GNApp.view.IntroduceView",{
 							title : "소개",
 						},
 						{
-							xtype : 'list',
+							xtype : 'panel',
 							flex : 2,
-							itemId : 'tweetList',
-							itemTpl : [
-									'<div style="float:left; width: 60px;">',
-									'  <img src="{profile_image_url}">',
-									'</div>',
-									'<div style="margin-left: 62px;">',
-									'  {text}<br>{created_at:date("d M Y")}<br/>',
-									'{id}',
-									'</div>' ],
-							store : 'Tweets'
+							style:'background-color:#e2e2e2;',
+							html:[
+									'<video controls poster="http://gntestserver.appspot.com/Image/ev01.png" width="320" height="240">',
+									'<source src="http://gntestserver.appspot.com/video/bw01.mp4" type="video/mp4"/>',
+									'</video>'
+							      ]
 						}, {
 							xtype : "carousel",
 							flex : 1,
@@ -49,13 +45,13 @@ Ext.define("GNApp.view.IntroduceView",{
 								tapstart:{
 									fn:function(event){
 										var itemLength = Ext.getCmp("introduceCaro").innerItems.length;
-										var storeLength = Ext.getStore("Tweets").data.length;
+										var storeLength = Ext.getStore("introduceImageListStore").data.length;
 										var currentIndex = Ext.getCmp("introduceCaro").getActiveIndex();
 										var cycleItemCount = 0;
 										if(itemLength - 2 == currentIndex){
 											for(var idx=itemLength+1; idx<=storeLength && cycleItemCount <5; idx++){
 												cycleItemCount++;
-												Ext.getCmp("introduceCaro").add(addItem(idx));
+												Ext.getCmp("introduceCaro").add(addIntroItem(idx));
 											}
 										}
 									},element:"element"
