@@ -25,7 +25,7 @@ Ext.define('MyApp.store.Tweets', {
         storeId: 'Tweets',
         proxy: {
             type: 'jsonp',
-            url: 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=xguru&count=20&include_entities=true&include_rts=false',
+            url: 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=sencha&count=20&include_entities=true&include_rts=false',
             reader: {
                 type: 'json'
             }

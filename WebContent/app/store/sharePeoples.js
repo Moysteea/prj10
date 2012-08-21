@@ -48,16 +48,6 @@ Ext.define('MyApp.store.sharePeoples', {
 					"name": "피오니",
 				}
 			]
-/*        
-        storeId: 'sharePeoples',
-        proxy: {
-            type: 'jsonp',
-            url: 'http://api.twitter.com/1/statuses/user_timeline.json?screen_name=xguru&count=20&include_entities=true&include_rts=false',
-            reader: {
-                type: 'json'
-            }
-        }
-*/
 
     }
 });

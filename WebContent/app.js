@@ -16,22 +16,27 @@
 Ext.Loader.setConfig({
 	enabled : true
 });
-var canvas;
-var context;
-var image;
+
 
 Ext.application({
-	models : [ 'GuestBook' ],
-	controllers : [ 'GuestBookController' ],
-	stores : [ 'sharePeoples' ],
-	views : [ 'GuestBookPanel' ],
+	models : [ 'GuestBook', 'Tweet' ],
+	controllers : [ 'MapController' ],
+	stores : [ 'sharePeoples', 'Tweets' ],
+	views : [ 'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay', 'test'],
 	name : 'MyApp',
 
 	launch : function() {
 
-		Ext.create('MyApp.view.GuestBookPanel', {
+		Ext.create('MyApp.view.ShareMainView', {
 			fullscreen : true
 		});
+		//for debug
+		/*
+		 *
+		Ext.create('MyApp.view.test', {
+			fullscreen : true
+		});
+		*/
 	}
 
 });
