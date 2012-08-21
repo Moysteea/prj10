@@ -22,7 +22,7 @@ Ext.application({
 	models : [ 'GuestBook', 'Tweet' ],
 	controllers : [ 'MapController' ],
 	stores : [ 'sharePeoples', 'Tweets' ],
-	views : [ 'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay', 'test'],
+	views : [ 'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay'],
 	name : 'MyApp',
 
 	launch : function() {

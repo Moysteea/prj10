@@ -10,10 +10,18 @@ Ext.define('MyApp.view.ShareMainView', {
 		items : 
 			[
 				{
-					xtype : 'toolbar',
+					xtype : 'titlebar',
+					//xtype : 'toolbar',
+					title: '<img src = "resources/hopeforafrica.png" height="50"/>',
 					docked : 'top',
-					title : '공유합시다',
-				    flex: 1
+				    flex: 1,
+				    items :[
+				            {xtype: 'button',
+				            	text: '후원하기',
+				            	ui: 'action',
+				            	align:'right'
+				            	}
+				            ]
 				},
 				/*
 				{
