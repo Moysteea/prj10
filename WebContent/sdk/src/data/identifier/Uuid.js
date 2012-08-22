@@ -5,14 +5,14 @@
  * This means that a single instance is shared unless the id property is overridden. Thus,
  * two {@link Ext.data.Model} instances configured like the following share one generator:
  *
- *     Ext.define('MyApp.data.MyModelX', {
+ *     Ext.define('GNApp.data.MyModelX', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'uuid'
  *         }
  *     });
  *
- *     Ext.define('MyApp.data.MyModelY', {
+ *     Ext.define('GNApp.data.MyModelY', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'uuid'

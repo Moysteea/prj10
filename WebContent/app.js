@@ -1,13 +1,18 @@
 Ext.application({
     name: 'GNApp',
     models: [
-             'ItemVO','IntroduceImageListVO'
+             'ItemVO','IntroduceImageListVO',
+             'GuestBook', 'Tweet'
          ],
-         stores: [
-             'ItemStore','IntroduceImageListStore'
+	controllers : [ 'MapController' ],
+
+    stores: [
+             'ItemStore','IntroduceImageListStore',
+             'sharePeoples', 'Tweets'
          ],
     views: [
-            	'IntroduceView','NewsView','MediaView','ShareView'
+            	'IntroduceView','NewsView','MediaView','ShareView',
+            	'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay'
             ],
 
     icon: {
@@ -32,6 +37,11 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
+        /*
         Ext.Viewport.add(Ext.create('GNApp.view.Main'));
+         */
+		Ext.create('GNApp.view.ShareMainView', {
+			fullscreen : true
+		});
     }
 });

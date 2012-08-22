@@ -107,7 +107,7 @@ Ext.define('Ext.direct.Manager', {
      *                 len: 1
      *             }]
      *         },
-     *         namespace: "myApplication", // namespace to create the Remoting Provider in
+     *         namespace: "GNApplication", // namespace to create the Remoting Provider in
      *     });
      *
      * @param {Ext.direct.Provider/Object...} provider
@@ -227,7 +227,7 @@ Ext.define('Ext.direct.Manager', {
 
     /**
      * Parses a direct function. It may be passed in a string format, for example:
-     * "MyApp.Person.read".
+     * "GNApp.Person.read".
      * @protected
      * @param {String/Function} fn The direct function
      * @return {Function} The function to use in the direct call. Null if not found

@@ -5,7 +5,7 @@
  *
  * An example of a configured simple generator would be:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: {

@@ -14,7 +14,7 @@ Ext.define('Ext.app.History', {
     /**
      * @event change
      * Fires when a change in browser url is detected
-     * @param {String} url The new url, after the hash (e.g. http://myapp.com/#someUrl returns 'someUrl')
+     * @param {String} url The new url, after the hash (e.g. http://GNApp.com/#someUrl returns 'someUrl')
      */
 
     config: {

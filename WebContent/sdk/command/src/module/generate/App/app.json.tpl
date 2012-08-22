@@ -11,7 +11,7 @@
 
     /**
      * The absolute URL to this application in development environment, i.e: the URL to run this application
-     * on your web browser during development, e.g: "http://localhost/myapp/index.html".
+     * on your web browser during development, e.g: "http://localhost/GNApp/index.html".
      *
      * This value is needed when build to resolve your application's dependencies if it requires server-side resources
      * that are not accessible via file system protocol.

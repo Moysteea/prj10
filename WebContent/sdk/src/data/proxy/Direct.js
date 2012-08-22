@@ -27,7 +27,7 @@
  *             fields: ['firstName', 'lastName'],
  *             proxy: {
  *                 type: 'direct',
- *                 directFn: MyApp.getUsers,
+ *                 directFn: GNApp.getUsers,
  *                 paramOrder: 'id' // Tells the proxy to pass the id as the first parameter to the remoting method.
  *             }
  *         }
@@ -66,7 +66,7 @@ Ext.define('Ext.data.proxy.Direct', {
          * @cfg {Function/String} directFn
          * Function to call when executing a request. directFn is a simple alternative to defining the api configuration-parameter
          * for Store's which will not implement a full CRUD api. The directFn may also be a string reference to the fully qualified
-         * name of the function, for example: 'MyApp.company.GetProfile'. This can be useful when using dynamic loading. The string
+         * name of the function, for example: 'GNApp.company.GetProfile'. This can be useful when using dynamic loading. The string
          * will be looked up when the proxy is created.
          */
         directFn : undefined,

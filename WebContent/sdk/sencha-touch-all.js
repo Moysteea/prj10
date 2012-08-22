@@ -6585,7 +6585,7 @@ var noArgs = [],
      * @member Ext.Class
      * List of short aliases for class names.  Most useful for defining xtypes for widgets:
      *
-     *     Ext.define('MyApp.CoolPanel', {
+     *     Ext.define('GNApp.CoolPanel', {
      *         extend: 'Ext.panel.Panel',
      *         alias: ['widget.coolpanel'],
      *         title: 'Yeah!'
@@ -16380,7 +16380,7 @@ Ext.define('Ext.data.Validations', {
  *
  * An example of a configured simple generator would be:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: {
@@ -16418,14 +16418,14 @@ Ext.define('Ext.data.identifier.Simple', {
  * This means that a single instance is shared unless the id property is overridden. Thus,
  * two {@link Ext.data.Model} instances configured like the following share one generator:
  *
- *     Ext.define('MyApp.data.MyModelX', {
+ *     Ext.define('GNApp.data.MyModelX', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'uuid'
  *         }
  *     });
  *
- *     Ext.define('MyApp.data.MyModelY', {
+ *     Ext.define('GNApp.data.MyModelY', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'uuid'
@@ -21782,7 +21782,7 @@ Ext.define('Ext.data.Field', {
  *
  * This class is a sequential id generator. A simple use of this class would be like so:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'sequential'
@@ -21792,7 +21792,7 @@ Ext.define('Ext.data.Field', {
  *
  * An example of a configured generator would be:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: {
@@ -27519,8 +27519,8 @@ Ext.define('Ext.AbstractComponent', {
  * {@link Ext.app.Application#controllers} config. The Application automatically instantiates each Controller and keeps
  * references to each, so it is unusual to need to instantiate Controllers directly. By convention each Controller is
  * named after the thing (usually the Model) that it deals with primarily, usually in the plural - for example if your
- * app is called 'MyApp' and you have a Controller that manages Products, convention is to create a
- * MyApp.controller.Products class in the file app/controller/Products.js.
+ * app is called 'GNApp' and you have a Controller that manages Products, convention is to create a
+ * GNApp.controller.Products class in the file app/controller/Products.js.
  *
  * ## Refs and Control
  *
@@ -27534,7 +27534,7 @@ Ext.define('Ext.AbstractComponent', {
  * page. We can define as many refs as we like for each Controller, for example here we define a ref called 'nav' that
  * finds a Component on the page with the ID 'mainNav'. We then use that ref in the addLogoutButton beneath it:
  *
- *     Ext.define('MyApp.controller.Main', {
+ *     Ext.define('GNApp.controller.Main', {
  *         extend: 'Ext.app.Controller',
  *
  *         config: {
@@ -27578,7 +27578,7 @@ Ext.define('Ext.AbstractComponent', {
  * Refs can also be passed a couple of additional options, beyond name and selector. These are autoCreate and xtype,
  * which are almost always used together:
  *
- *     Ext.define('MyApp.controller.Main', {
+ *     Ext.define('GNApp.controller.Main', {
  *         extend: 'Ext.app.Controller',
  *
  *         config: {
@@ -27609,7 +27609,7 @@ Ext.define('Ext.AbstractComponent', {
  * to events fired by Components and have your Controller react in some way. Control accepts both ComponentQuery
  * selectors and refs as its keys, and listener objects as values - for example:
  *
- *     Ext.define('MyApp.controller.Main', {
+ *     Ext.define('GNApp.controller.Main', {
  *         extend: 'Ext.app.Controller',
  *
  *         config: {
@@ -27653,7 +27653,7 @@ Ext.define('Ext.AbstractComponent', {
  * For example, let's say we have a Controller responsible for logging in and viewing user profiles, and want to make
  * those screens accessible via urls. We could achieve that like this:
  *
- *     Ext.define('MyApp.controller.Users', {
+ *     Ext.define('GNApp.controller.Users', {
  *         extend: 'Ext.app.Controller',
  *
  *         config: {
@@ -27677,7 +27677,7 @@ Ext.define('Ext.AbstractComponent', {
  *
  *         //Loads the User then adds a 'userprofile' view to the main TabPanel
  *         showUserById: function(id) {
- *             MyApp.model.User.load(id, {
+ *             GNApp.model.User.load(id, {
  *                 scope: this,
  *                 success: function(user) {
  *                     this.getMain().add({
@@ -27691,8 +27691,8 @@ Ext.define('Ext.AbstractComponent', {
  *
  * The routes we specified above simply map the contents of the browser address bar to a Controller function to call
  * when that route is matched. The routes can be simple text like the login route, which matches against
- * http://myapp.com/#login, or contain wildcards like the 'user/:id' route, which matches urls like
- * http://myapp.com/#user/123. Whenever the address changes the Controller automatically calls the function specified.
+ * http://GNApp.com/#login, or contain wildcards like the 'user/:id' route, which matches urls like
+ * http://GNApp.com/#user/123. Whenever the address changes the Controller automatically calls the function specified.
  *
  * Note that in the showUserById function we had to first load the User instance. Whenever you use a route, the
  * function that is called by that route is completely responsible for loading its data and restoring state. This is
@@ -27749,8 +27749,8 @@ Ext.define('Ext.app.Controller', {
          *         'users/:id': 'showUserById'
          *     }
          *
-         * The first route will match against http://myapp.com/#login and call the Controller's showLogin function. The
-         * second route contains a wildcard (':id') and will match all urls like http://myapp.com/#users/123, calling
+         * The first route will match against http://GNApp.com/#login and call the Controller's showLogin function. The
+         * second route contains a wildcard (':id') and will match all urls like http://GNApp.com/#users/123, calling
          * the showUserById function with the matched ID as the first argument.
          *
          * @accessor
@@ -27785,7 +27785,7 @@ Ext.define('Ext.app.Controller', {
          * when dispatched to from a route. These are usually used to run pre-processing functions like authentication
          * before a certain function is executed. They are only called when dispatching from a route. Example usage:
          *
-         *     Ext.define('MyApp.controller.Products', {
+         *     Ext.define('GNApp.controller.Products', {
          *         config: {
          *             before: {
          *                 editProduct: 'authenticate'
@@ -27803,7 +27803,7 @@ Ext.define('Ext.app.Controller', {
          *
          *         //this is run before editProduct
          *         authenticate: function(action) {
-         *             MyApp.authenticate({
+         *             GNApp.authenticate({
          *                 success: function() {
          *                     action.resume();
          *                 },
@@ -27992,7 +27992,7 @@ Ext.define('Ext.app.Controller', {
     /**
      * @private
      * As a convenience developers can locally qualify store names (e.g. 'MyStore' vs
-     * 'MyApp.store.MyStore'). This just makes sure everything ends up fully qualified
+     * 'GNApp.store.MyStore'). This just makes sure everything ends up fully qualified
      */
     applyStores: function(stores) {
         return this.getFullyQualified(stores, 'store');
@@ -28001,7 +28001,7 @@ Ext.define('Ext.app.Controller', {
     /**
      * @private
      * As a convenience developers can locally qualify model names (e.g. 'MyModel' vs
-     * 'MyApp.model.MyModel'). This just makes sure everything ends up fully qualified
+     * 'GNApp.model.MyModel'). This just makes sure everything ends up fully qualified
      */
     applyModels: function(models) {
         return this.getFullyQualified(models, 'model');
@@ -28010,7 +28010,7 @@ Ext.define('Ext.app.Controller', {
     /**
      * @private
      * As a convenience developers can locally qualify view names (e.g. 'MyView' vs
-     * 'MyApp.view.MyView'). This just makes sure everything ends up fully qualified
+     * 'GNApp.view.MyView'). This just makes sure everything ends up fully qualified
      */
     applyViews: function(views) {
         return this.getFullyQualified(views, 'view');
@@ -28032,7 +28032,7 @@ Ext.define('Ext.app.Controller', {
         for (i = 0; i < length; i++) {
             name = items[i];
 
-            //we check name === appName to allow MyApp.profile.MyApp to exist
+            //we check name === appName to allow GNApp.profile.GNApp to exist
             if (Ext.isString(name) && (Ext.Loader.getPrefix(name) === "" || name === appName)) {
                 items[i] = appName + '.' + namespace + '.' + name;
             }
@@ -28135,7 +28135,7 @@ Ext.define('Ext.app.History', {
     /**
      * @event change
      * Fires when a change in browser url is detected
-     * @param {String} url The new url, after the hash (e.g. http://myapp.com/#someUrl returns 'someUrl')
+     * @param {String} url The new url, after the hash (e.g. http://GNApp.com/#someUrl returns 'someUrl')
      */
 
     config: {
@@ -28246,13 +28246,13 @@ Ext.define('Ext.app.History', {
  * First you need to tell your Application about your Profile(s):
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *         profiles: ['Phone', 'Tablet']
  *     });
  *
  * This will load app/profile/Phone.js and app/profile/Tablet.js. Here's how we might define the Phone profile:
  *
- *     Ext.define('MyApp.profile.Phone', {
+ *     Ext.define('GNApp.profile.Phone', {
  *         extend: 'Ext.app.Profile',
  *
  *         views: ['Main'],
@@ -28271,12 +28271,12 @@ Ext.define('Ext.app.History', {
  * in a Profile are expected to be namespaced under the name of the Profile. Here's an expanded form of the example
  * above:
  *
- *     Ext.define('MyApp.profile.Phone', {
+ *     Ext.define('GNApp.profile.Phone', {
  *         extend: 'Ext.app.Profile',
  *
  *         views: ['Main'],
  *         controllers: ['Signup'],
- *         models: ['MyApp.model.Group'],
+ *         models: ['GNApp.model.Group'],
  *
  *         isActive: function() {
  *             return Ext.os.is.Phone;
@@ -28301,9 +28301,9 @@ Ext.define('Ext.app.Profile', {
     config: {
         /**
          * @cfg {String} namespace The namespace that this Profile's classes can be found in. Defaults to the lowercased
-         * Profile {@link #name}, for example a Profile called MyApp.profile.Phone will by default have a 'phone'
+         * Profile {@link #name}, for example a Profile called GNApp.profile.Phone will by default have a 'phone'
          * namespace, which means that this Profile's additional models, stores, views and controllers will be loaded
-         * from the MyApp.model.phone.*, MyApp.store.phone.*, MyApp.view.phone.* and MyApp.controller.phone.* namespaces
+         * from the GNApp.model.phone.*, GNApp.store.phone.*, GNApp.view.phone.* and GNApp.controller.phone.* namespaces
          * respectively.
          * @accessor
          */
@@ -28311,7 +28311,7 @@ Ext.define('Ext.app.Profile', {
 
         /**
          * @cfg {String} name The name of this Profile. Defaults to the last section of the class name (e.g. a profile
-         * called MyApp.profile.Phone will default the name to 'Phone').
+         * called GNApp.profile.Phone will default the name to 'Phone').
          * @accessor
          */
         name: 'auto',
@@ -28322,10 +28322,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     controllers: [
          *         'Users',
-         *         'MyApp.controller.Products'
+         *         'GNApp.controller.Products'
          *     ]
          *
-         * This will load *MyApp.controller.tablet.Users* and *MyApp.controller.Products*.
+         * This will load *GNApp.controller.tablet.Users* and *GNApp.controller.Products*.
          * @accessor
          */
         controllers: [],
@@ -28336,10 +28336,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     models: [
          *         'Group',
-         *         'MyApp.model.User'
+         *         'GNApp.model.User'
          *     ]
          *
-         * This will load *MyApp.model.tablet.Group* and *MyApp.model.User*.
+         * This will load *GNApp.model.tablet.Group* and *GNApp.model.User*.
          * @accessor
          */
         models: [],
@@ -28350,10 +28350,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     views: [
          *         'Main',
-         *         'MyApp.view.Login'
+         *         'GNApp.view.Login'
          *     ]
          *
-         * This will load *MyApp.view.tablet.Main* and *MyApp.view.Login*.
+         * This will load *GNApp.view.tablet.Main* and *GNApp.view.Login*.
          * @accessor
          */
         views: [],
@@ -28364,10 +28364,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     stores: [
          *         'Users',
-         *         'MyApp.store.Products'
+         *         'GNApp.store.Products'
          *     ]
          *
-         * This will load *MyApp.store.tablet.Users* and *MyApp.store.Products*.
+         * This will load *GNApp.store.tablet.Users* and *GNApp.store.Products*.
          * @accessor
          */
         stores: [],
@@ -28406,7 +28406,7 @@ Ext.define('Ext.app.Profile', {
      * usage:
      *
      *     launch: function() {
-     *         Ext.create('MyApp.view.tablet.Main');
+     *         Ext.create('GNApp.view.tablet.Main');
      *     }
      */
     launch: Ext.emptyFn,
@@ -28457,7 +28457,7 @@ Ext.define('Ext.app.Profile', {
 
             Ext.each(map[classType], function(className) {
                 if (Ext.isString(className)) {
-                    //we check name === appName to allow MyApp.profile.MyApp to exist
+                    //we check name === appName to allow GNApp.profile.GNApp to exist
                     if (Ext.isString(className) && (Ext.Loader.getPrefix(className) === "" || className === appName)) {
                         className = appName + '.' + classType + '.' + namespace + '.' + className;
                     }
@@ -28491,7 +28491,7 @@ Ext.define('Ext.app.Profile', {
  * Sample usage:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         models: ['User', 'Group'],
  *         stores: ['Users'],
@@ -28499,7 +28499,7 @@ Ext.define('Ext.app.Profile', {
  *         views: ['Main', 'ShowUser'],
  *
  *         launch: function() {
- *             Ext.create('MyApp.view.Main');
+ *             Ext.create('GNApp.view.Main');
  *         }
  *     });
  *
@@ -28517,7 +28517,7 @@ Ext.define('Ext.app.Profile', {
  * specify the last part of each class name and Application will figure out the rest for you:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         controllers: ['Users'],
  *         models: ['User', 'Group'],
@@ -28543,7 +28543,7 @@ Ext.define('Ext.app.Profile', {
  * To specify dependencies in subfolders just use a period (".") to specify the folder:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         controllers: ['Users', 'nested.MyController'],
  *         views: ['products.Show', 'products.Edit', 'user.Login']
@@ -28627,7 +28627,7 @@ Ext.define('Ext.app.Profile', {
  * specified in the Ext.application setup block:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         {@link #icon}: 'resources/img/icon.png',
  *         {@link #glossOnIcon}: false,
@@ -28750,8 +28750,8 @@ Ext.define('Ext.app.Application', {
         /**
          * @cfg {String} name The name of the Application. This should be a single word without spaces or periods
          * because it is used as the Application's global namespace. All classes in your application should be
-         * namespaced undef the Application's name - for example if your application name is 'MyApp', your classes
-         * should be named 'MyApp.model.User', 'MyApp.controller.Users', 'MyApp.view.Main' etc
+         * namespaced undef the Application's name - for example if your application name is 'GNApp', your classes
+         * should be named 'GNApp.model.User', 'GNApp.controller.Users', 'GNApp.view.Main' etc
          * @accessor
          */
         name: null,
@@ -29091,7 +29091,7 @@ Ext.define('Ext.app.Application', {
      * @private
      * Should be called after dependencies are loaded, instantiates all of the Stores specified in the {@link #stores}
      * config. For each item in the stores array we make sure the Store is instantiated. When strings are specified,
-     * the corresponding app/store/StoreName.js was loaded so we now instantiate a MyApp.store.StoreName, giving it the
+     * the corresponding app/store/StoreName.js was loaded so we now instantiate a GNApp.store.StoreName, giving it the
      * id StoreName.
      */
     instantiateStores: function() {
@@ -29150,7 +29150,7 @@ Ext.define('Ext.app.Application', {
     /**
      * @private
      * As a convenience developers can locally qualify controller names (e.g. 'MyController' vs
-     * 'MyApp.controller.MyController'). This just makes sure everything ends up fully qualified
+     * 'GNApp.controller.MyController'). This just makes sure everything ends up fully qualified
      */
     applyControllers: function(controllers) {
         return this.getFullyQualified(controllers, 'controller');
@@ -29159,7 +29159,7 @@ Ext.define('Ext.app.Application', {
     /**
      * @private
      * As a convenience developers can locally qualify profile names (e.g. 'MyProfile' vs
-     * 'MyApp.profile.MyProfile'). This just makes sure everything ends up fully qualified
+     * 'GNApp.profile.MyProfile'). This just makes sure everything ends up fully qualified
      */
     applyProfiles: function(profiles) {
         return this.getFullyQualified(profiles, 'profile');
@@ -39740,7 +39740,7 @@ Ext.define('Ext.direct.Manager', {
      *                 len: 1
      *             }]
      *         },
-     *         namespace: "myApplication", // namespace to create the Remoting Provider in
+     *         namespace: "GNApplication", // namespace to create the Remoting Provider in
      *     });
      *
      * @param {Ext.direct.Provider/Object...} provider
@@ -39860,7 +39860,7 @@ Ext.define('Ext.direct.Manager', {
 
     /**
      * Parses a direct function. It may be passed in a string format, for example:
-     * "MyApp.Person.read".
+     * "GNApp.Person.read".
      * @protected
      * @param {String/Function} fn The direct function
      * @return {Function} The function to use in the direct call. Null if not found
@@ -39911,7 +39911,7 @@ Ext.define('Ext.direct.Manager', {
  *             fields: ['firstName', 'lastName'],
  *             proxy: {
  *                 type: 'direct',
- *                 directFn: MyApp.getUsers,
+ *                 directFn: GNApp.getUsers,
  *                 paramOrder: 'id' // Tells the proxy to pass the id as the first parameter to the remoting method.
  *             }
  *         }
@@ -39950,7 +39950,7 @@ Ext.define('Ext.data.proxy.Direct', {
          * @cfg {Function/String} directFn
          * Function to call when executing a request. directFn is a simple alternative to defining the api configuration-parameter
          * for Store's which will not implement a full CRUD api. The directFn may also be a string reference to the fully qualified
-         * name of the function, for example: 'MyApp.company.GetProfile'. This can be useful when using dynamic loading. The string
+         * name of the function, for example: 'GNApp.company.GetProfile'. This can be useful when using dynamic loading. The string
          * will be looked up when the proxy is created.
          */
         directFn : undefined,
@@ -40982,7 +40982,7 @@ Ext.define('Ext.XTemplate', {
          * these templates are seldom actual instances but are rather configurations. For
          * example:
          *
-         *      Ext.define('MyApp.Class', {
+         *      Ext.define('GNApp.Class', {
          *          someTpl: [
          *              'tpl text here'
          *          ]
@@ -43235,24 +43235,24 @@ Ext.define('Ext.data.NodeInterface', {
  * writing an ecommerce system where Users can make Orders - there's a relationship between these Models that we can
  * express like this:
  *
- *     Ext.define('MyApp.model.User', {
+ *     Ext.define('GNApp.model.User', {
  *         extend: 'Ext.data.Model',
  *
  *         config: {
  *             fields: ['id', 'name', 'email'],
  *             hasMany: {
- *                 model: 'MyApp.model.Order',
+ *                 model: 'GNApp.model.Order',
  *                 name: 'orders'
  *             }
  *         }
  *     });
  *
- *     Ext.define('MyApp.model.Order', {
+ *     Ext.define('GNApp.model.Order', {
  *         extend: 'Ext.data.Model',
  *
  *         config: {
  *             fields: ['id', 'user_id', 'status', 'price'],
- *             belongsTo: 'MyApp.model.User'
+ *             belongsTo: 'GNApp.model.User'
  *         }
  *     });
  *
@@ -43303,7 +43303,7 @@ Ext.define('Ext.data.NodeInterface', {
  *     }
  *
  *     // Client code
- *     Ext.define('MyApp.model.Group', {
+ *     Ext.define('GNApp.model.Group', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             fields: ['id', 'parent_id', 'name'],
@@ -43317,14 +43317,14 @@ Ext.define('Ext.data.NodeInterface', {
  *             },
  *             associations: [{
  *                 type: 'hasMany',
- *                 model: 'MyApp.model.Group',
+ *                 model: 'GNApp.model.Group',
  *                 primaryKey: 'id',
  *                 foreignKey: 'parent_id',
  *                 autoLoad: true,
  *                 associationKey: 'child_groups' // read child data from child_groups
  *             }, {
  *                 type: 'belongsTo',
- *                 model: 'MyApp.model.Group',
+ *                 model: 'GNApp.model.Group',
  *                 primaryKey: 'id',
  *                 foreignKey: 'parent_id',
  *                 associationKey: 'parent_group' // read parent data from parent_group
@@ -43334,7 +43334,7 @@ Ext.define('Ext.data.NodeInterface', {
  *
  *
  *     Ext.onReady(function(){
- *         MyApp.model.Group.load(10, {
+ *         GNApp.model.Group.load(10, {
  *             success: function(group){
  *                 console.log(group.getGroup().get('name'));
  *
@@ -45932,7 +45932,7 @@ Ext.define('Ext.data.Model', {
          * The field definitions for all instances of this Model. **Note:** this does not set the *values* of each
          * field on an instance, it sets the collection of fields itself. Sample usage:
          *
-         *     Ext.define('MyApp.model.User', {
+         *     Ext.define('GNApp.model.User', {
          *         extend: 'Ext.data.Model',
          *
          *         config: {
@@ -46063,7 +46063,7 @@ Ext.define('Ext.data.Model', {
         /**
          * Asynchronously loads a model instance by id. Sample usage:
          *
-         *     MyApp.User = Ext.define('User', {
+         *     GNApp.User = Ext.define('User', {
          *         extend: 'Ext.data.Model',
          *         fields: [
          *             {name: 'id', type: 'int'},
@@ -46071,7 +46071,7 @@ Ext.define('Ext.data.Model', {
          *         ]
          *     });
          *
-         *     MyApp.User.load(10, {
+         *     GNApp.User.load(10, {
          *         scope: this,
          *         failure: function(record, operation) {
          *             //do something if the load failed
@@ -47026,7 +47026,7 @@ Ext.define('Ext.data.Model', {
 
     /**
      * Returns a url-suitable string for this model instance. By default this just returns the name of the Model class
-     * followed by the instance ID - for example an instance of MyApp.model.User with ID 123 will return 'user/123'.
+     * followed by the instance ID - for example an instance of GNApp.model.User with ID 123 will return 'user/123'.
      * @return {String} The url string for this model instance
      */
     toUrl: function() {
@@ -70978,14 +70978,14 @@ Ext.define('Ext.form.FieldSet', {
  * It's also easy to load {@link Ext.data.Model Model} instances into a form - let's say we have a User model and want
  * to load a particular instance into our form:
  *
- *     Ext.define('MyApp.model.User', {
+ *     Ext.define('GNApp.model.User', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             fields: ['name', 'email', 'password']
  *         }
  *     });
  *
- *     var ed = Ext.create('MyApp.model.User', {
+ *     var ed = Ext.create('GNApp.model.User', {
  *         name: 'Ed',
  *         email: 'ed@sencha.com',
  *         password: 'secret'

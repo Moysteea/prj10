@@ -6,24 +6,24 @@
  * writing an ecommerce system where Users can make Orders - there's a relationship between these Models that we can
  * express like this:
  *
- *     Ext.define('MyApp.model.User', {
+ *     Ext.define('GNApp.model.User', {
  *         extend: 'Ext.data.Model',
  *
  *         config: {
  *             fields: ['id', 'name', 'email'],
  *             hasMany: {
- *                 model: 'MyApp.model.Order',
+ *                 model: 'GNApp.model.Order',
  *                 name: 'orders'
  *             }
  *         }
  *     });
  *
- *     Ext.define('MyApp.model.Order', {
+ *     Ext.define('GNApp.model.Order', {
  *         extend: 'Ext.data.Model',
  *
  *         config: {
  *             fields: ['id', 'user_id', 'status', 'price'],
- *             belongsTo: 'MyApp.model.User'
+ *             belongsTo: 'GNApp.model.User'
  *         }
  *     });
  *
@@ -74,7 +74,7 @@
  *     }
  *
  *     // Client code
- *     Ext.define('MyApp.model.Group', {
+ *     Ext.define('GNApp.model.Group', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             fields: ['id', 'parent_id', 'name'],
@@ -88,14 +88,14 @@
  *             },
  *             associations: [{
  *                 type: 'hasMany',
- *                 model: 'MyApp.model.Group',
+ *                 model: 'GNApp.model.Group',
  *                 primaryKey: 'id',
  *                 foreignKey: 'parent_id',
  *                 autoLoad: true,
  *                 associationKey: 'child_groups' // read child data from child_groups
  *             }, {
  *                 type: 'belongsTo',
- *                 model: 'MyApp.model.Group',
+ *                 model: 'GNApp.model.Group',
  *                 primaryKey: 'id',
  *                 foreignKey: 'parent_id',
  *                 associationKey: 'parent_group' // read parent data from parent_group
@@ -105,7 +105,7 @@
  *
  *
  *     Ext.onReady(function(){
- *         MyApp.model.Group.load(10, {
+ *         GNApp.model.Group.load(10, {
  *             success: function(group){
  *                 console.log(group.getGroup().get('name'));
  *

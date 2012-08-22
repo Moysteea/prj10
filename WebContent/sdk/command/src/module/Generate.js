@@ -7,8 +7,8 @@ Ext.define('Command.module.Generate', {
         app: [
             "Generate a new project with the recommended structure",
             ['name', 'n', 'The namespace of the application to create. ' +
-                'This will be used as the prefix for all your classes', 'string', null, 'MyApp'],
-            ['path', 'p', 'The directory path to generate this application to.', 'string', null, '/path/to/myapp'],
+                'This will be used as the prefix for all your classes', 'string', null, 'GNApp'],
+            ['path', 'p', 'The directory path to generate this application to.', 'string', null, '/path/to/GNApp'],
             ['library', 'l', "The library's build to develop your application with, either 'core' or 'all'. " +
                 "Defaults to 'core'." +
                 "\n                          " +

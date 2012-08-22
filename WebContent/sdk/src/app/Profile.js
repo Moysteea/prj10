@@ -19,13 +19,13 @@
  * First you need to tell your Application about your Profile(s):
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *         profiles: ['Phone', 'Tablet']
  *     });
  *
  * This will load app/profile/Phone.js and app/profile/Tablet.js. Here's how we might define the Phone profile:
  *
- *     Ext.define('MyApp.profile.Phone', {
+ *     Ext.define('GNApp.profile.Phone', {
  *         extend: 'Ext.app.Profile',
  *
  *         views: ['Main'],
@@ -44,12 +44,12 @@
  * in a Profile are expected to be namespaced under the name of the Profile. Here's an expanded form of the example
  * above:
  *
- *     Ext.define('MyApp.profile.Phone', {
+ *     Ext.define('GNApp.profile.Phone', {
  *         extend: 'Ext.app.Profile',
  *
  *         views: ['Main'],
  *         controllers: ['Signup'],
- *         models: ['MyApp.model.Group'],
+ *         models: ['GNApp.model.Group'],
  *
  *         isActive: function() {
  *             return Ext.os.is.Phone;
@@ -74,9 +74,9 @@ Ext.define('Ext.app.Profile', {
     config: {
         /**
          * @cfg {String} namespace The namespace that this Profile's classes can be found in. Defaults to the lowercased
-         * Profile {@link #name}, for example a Profile called MyApp.profile.Phone will by default have a 'phone'
+         * Profile {@link #name}, for example a Profile called GNApp.profile.Phone will by default have a 'phone'
          * namespace, which means that this Profile's additional models, stores, views and controllers will be loaded
-         * from the MyApp.model.phone.*, MyApp.store.phone.*, MyApp.view.phone.* and MyApp.controller.phone.* namespaces
+         * from the GNApp.model.phone.*, GNApp.store.phone.*, GNApp.view.phone.* and GNApp.controller.phone.* namespaces
          * respectively.
          * @accessor
          */
@@ -84,7 +84,7 @@ Ext.define('Ext.app.Profile', {
 
         /**
          * @cfg {String} name The name of this Profile. Defaults to the last section of the class name (e.g. a profile
-         * called MyApp.profile.Phone will default the name to 'Phone').
+         * called GNApp.profile.Phone will default the name to 'Phone').
          * @accessor
          */
         name: 'auto',
@@ -95,10 +95,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     controllers: [
          *         'Users',
-         *         'MyApp.controller.Products'
+         *         'GNApp.controller.Products'
          *     ]
          *
-         * This will load *MyApp.controller.tablet.Users* and *MyApp.controller.Products*.
+         * This will load *GNApp.controller.tablet.Users* and *GNApp.controller.Products*.
          * @accessor
          */
         controllers: [],
@@ -109,10 +109,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     models: [
          *         'Group',
-         *         'MyApp.model.User'
+         *         'GNApp.model.User'
          *     ]
          *
-         * This will load *MyApp.model.tablet.Group* and *MyApp.model.User*.
+         * This will load *GNApp.model.tablet.Group* and *GNApp.model.User*.
          * @accessor
          */
         models: [],
@@ -123,10 +123,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     views: [
          *         'Main',
-         *         'MyApp.view.Login'
+         *         'GNApp.view.Login'
          *     ]
          *
-         * This will load *MyApp.view.tablet.Main* and *MyApp.view.Login*.
+         * This will load *GNApp.view.tablet.Main* and *GNApp.view.Login*.
          * @accessor
          */
         views: [],
@@ -137,10 +137,10 @@ Ext.define('Ext.app.Profile', {
          *
          *     stores: [
          *         'Users',
-         *         'MyApp.store.Products'
+         *         'GNApp.store.Products'
          *     ]
          *
-         * This will load *MyApp.store.tablet.Users* and *MyApp.store.Products*.
+         * This will load *GNApp.store.tablet.Users* and *GNApp.store.Products*.
          * @accessor
          */
         stores: [],
@@ -179,7 +179,7 @@ Ext.define('Ext.app.Profile', {
      * usage:
      *
      *     launch: function() {
-     *         Ext.create('MyApp.view.tablet.Main');
+     *         Ext.create('GNApp.view.tablet.Main');
      *     }
      */
     launch: Ext.emptyFn,
@@ -230,7 +230,7 @@ Ext.define('Ext.app.Profile', {
 
             Ext.each(map[classType], function(className) {
                 if (Ext.isString(className)) {
-                    //we check name === appName to allow MyApp.profile.MyApp to exist
+                    //we check name === appName to allow GNApp.profile.GNApp to exist
                     if (Ext.isString(className) && (Ext.Loader.getPrefix(className) === "" || className === appName)) {
                         className = appName + '.' + classType + '.' + namespace + '.' + className;
                     }

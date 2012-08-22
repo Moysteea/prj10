@@ -3,7 +3,7 @@
  *
  * This class is a sequential id generator. A simple use of this class would be like so:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: 'sequential'
@@ -13,7 +13,7 @@
  *
  * An example of a configured generator would be:
  *
- *     Ext.define('MyApp.data.MyModel', {
+ *     Ext.define('GNApp.data.MyModel', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             identifier: {

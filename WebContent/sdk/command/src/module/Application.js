@@ -11,19 +11,19 @@ Ext.define('Command.module.Application', {
         create: [
             "(Alias to 'sencha generate app') Generate a new project with the recommended structure",
             ['name', 'n', 'The namespace of the application to create. ' +
-                'This will be used as the prefix for all your classes', 'string', null, 'MyApp'],
-            ['path', 'p', 'The directory path to generate this application to.', 'string', null, '/path/to/myapp'],
+                'This will be used as the prefix for all your classes', 'string', null, 'GNApp'],
+            ['path', 'p', 'The directory path to generate this application to.', 'string', null, '/path/to/GNApp'],
             ['library', 'l', "The library's build to develop your application with, either 'core' or 'all'. " +
                 "Defaults to 'core'", 'string', 'core', 'all']
         ],
         upgrade: [
             "Upgrade the given application to the SDK at the current working directory",
-            ['path', 'p', 'The directory path to the application to upgrade', 'string', null, '/path/to/myapp']
+            ['path', 'p', 'The directory path to the application to upgrade', 'string', null, '/path/to/GNApp']
         ],
         resolve: [
             "Generate a list of dependencies in the exact loading order for the given application. " +
             "Note that the resolved paths are relative to the given application's HTML document",
-            ['uri', 'u', 'The URI to the application\'s HTML document', 'string', null, 'http://localhost/myapp/index.html'],
+            ['uri', 'u', 'The URI to the application\'s HTML document', 'string', null, 'http://localhost/GNApp/index.html'],
             ['output', 'o', 'The file path to write the results to in JSON format.', 'string', null, 'dependencies.json']
         ],
         build: [
@@ -48,13 +48,13 @@ Ext.define('Command.module.Application', {
                 'string', null, 'production'],
             ['destination', 'd', "The directory path to build this application to. " +
                 "\n                          " +
-                "If none given, the default path specified inside 'app.json' is used", 'string', '', '/path/to/deploy/myapp'],
+                "If none given, the default path specified inside 'app.json' is used", 'string', '', '/path/to/deploy/GNApp'],
             ['archive', 'a', "The directory path where all previous builds were stored," +
                 "\n                          " +
                 "needed to generate deltas between updates (for production only). " +
                 "\n                          " +
                 "If none given, the default path specified inside 'app.json' is used",
-                'string', '', '/path/to/myapp/archive']
+                'string', '', '/path/to/GNApp/archive']
         ]
     },
 

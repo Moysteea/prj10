@@ -6,7 +6,7 @@ Ext.define('Command.module.Project', {
     actions: {
         create: [
             "Generate a new project with the recommended structure",
-            ['name', 'p', 'The name of the application to create', 'string', null, 'MyApp']
+            ['name', 'p', 'The name of the application to create', 'string', null, 'GNApp']
         ]
     },
     

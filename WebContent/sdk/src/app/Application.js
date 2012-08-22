@@ -14,7 +14,7 @@
  * Sample usage:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         models: ['User', 'Group'],
  *         stores: ['Users'],
@@ -22,7 +22,7 @@
  *         views: ['Main', 'ShowUser'],
  *
  *         launch: function() {
- *             Ext.create('MyApp.view.Main');
+ *             Ext.create('GNApp.view.Main');
  *         }
  *     });
  *
@@ -40,7 +40,7 @@
  * specify the last part of each class name and Application will figure out the rest for you:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         controllers: ['Users'],
  *         models: ['User', 'Group'],
@@ -66,7 +66,7 @@
  * To specify dependencies in subfolders just use a period (".") to specify the folder:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         controllers: ['Users', 'nested.MyController'],
  *         views: ['products.Show', 'products.Edit', 'user.Login']
@@ -150,7 +150,7 @@
  * specified in the Ext.application setup block:
  *
  *     Ext.application({
- *         name: 'MyApp',
+ *         name: 'GNApp',
  *
  *         {@link #icon}: 'resources/img/icon.png',
  *         {@link #glossOnIcon}: false,
@@ -273,8 +273,8 @@ Ext.define('Ext.app.Application', {
         /**
          * @cfg {String} name The name of the Application. This should be a single word without spaces or periods
          * because it is used as the Application's global namespace. All classes in your application should be
-         * namespaced undef the Application's name - for example if your application name is 'MyApp', your classes
-         * should be named 'MyApp.model.User', 'MyApp.controller.Users', 'MyApp.view.Main' etc
+         * namespaced undef the Application's name - for example if your application name is 'GNApp', your classes
+         * should be named 'GNApp.model.User', 'GNApp.controller.Users', 'GNApp.view.Main' etc
          * @accessor
          */
         name: null,
@@ -364,7 +364,7 @@ Ext.define('Ext.app.Application', {
         if (config.autoCreateViewport) {
             Ext.Logger.deprecate(
                 '[Ext.app.Application] autoCreateViewport has been deprecated in Sencha Touch 2. Please implement a ' +
-                'launch function on your Application instead and use Ext.create("MyApp.view.Main") to create your initial UI.'
+                'launch function on your Application instead and use Ext.create("GNApp.view.Main") to create your initial UI.'
             );
         }
         // </deprecated>
@@ -635,7 +635,7 @@ Ext.define('Ext.app.Application', {
      * @private
      * Should be called after dependencies are loaded, instantiates all of the Stores specified in the {@link #stores}
      * config. For each item in the stores array we make sure the Store is instantiated. When strings are specified,
-     * the corresponding app/store/StoreName.js was loaded so we now instantiate a MyApp.store.StoreName, giving it the
+     * the corresponding app/store/StoreName.js was loaded so we now instantiate a GNApp.store.StoreName, giving it the
      * id StoreName.
      */
     instantiateStores: function() {
@@ -694,7 +694,7 @@ Ext.define('Ext.app.Application', {
     /**
      * @private
      * As a convenience developers can locally qualify controller names (e.g. 'MyController' vs
-     * 'MyApp.controller.MyController'). This just makes sure everything ends up fully qualified
+     * 'GNApp.controller.MyController'). This just makes sure everything ends up fully qualified
      */
     applyControllers: function(controllers) {
         return this.getFullyQualified(controllers, 'controller');
@@ -703,7 +703,7 @@ Ext.define('Ext.app.Application', {
     /**
      * @private
      * As a convenience developers can locally qualify profile names (e.g. 'MyProfile' vs
-     * 'MyApp.profile.MyProfile'). This just makes sure everything ends up fully qualified
+     * 'GNApp.profile.MyProfile'). This just makes sure everything ends up fully qualified
      */
     applyProfiles: function(profiles) {
         return this.getFullyQualified(profiles, 'profile');

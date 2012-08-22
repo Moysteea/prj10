@@ -43,14 +43,14 @@
  * It's also easy to load {@link Ext.data.Model Model} instances into a form - let's say we have a User model and want
  * to load a particular instance into our form:
  *
- *     Ext.define('MyApp.model.User', {
+ *     Ext.define('GNApp.model.User', {
  *         extend: 'Ext.data.Model',
  *         config: {
  *             fields: ['name', 'email', 'password']
  *         }
  *     });
  *
- *     var ed = Ext.create('MyApp.model.User', {
+ *     var ed = Ext.create('GNApp.model.User', {
  *         name: 'Ed',
  *         email: 'ed@sencha.com',
  *         password: 'secret'

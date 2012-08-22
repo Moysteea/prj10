@@ -263,7 +263,7 @@ Ext.define('Ext.data.Model', {
          * The field definitions for all instances of this Model. **Note:** this does not set the *values* of each
          * field on an instance, it sets the collection of fields itself. Sample usage:
          *
-         *     Ext.define('MyApp.model.User', {
+         *     Ext.define('GNApp.model.User', {
          *         extend: 'Ext.data.Model',
          *
          *         config: {
@@ -394,7 +394,7 @@ Ext.define('Ext.data.Model', {
         /**
          * Asynchronously loads a model instance by id. Sample usage:
          *
-         *     MyApp.User = Ext.define('User', {
+         *     GNApp.User = Ext.define('User', {
          *         extend: 'Ext.data.Model',
          *         fields: [
          *             {name: 'id', type: 'int'},
@@ -402,7 +402,7 @@ Ext.define('Ext.data.Model', {
          *         ]
          *     });
          *
-         *     MyApp.User.load(10, {
+         *     GNApp.User.load(10, {
          *         scope: this,
          *         failure: function(record, operation) {
          *             //do something if the load failed
@@ -1357,7 +1357,7 @@ Ext.define('Ext.data.Model', {
 
     /**
      * Returns a url-suitable string for this model instance. By default this just returns the name of the Model class
-     * followed by the instance ID - for example an instance of MyApp.model.User with ID 123 will return 'user/123'.
+     * followed by the instance ID - for example an instance of GNApp.model.User with ID 123 will return 'user/123'.
      * @return {String} The url string for this model instance
      */
     toUrl: function() {

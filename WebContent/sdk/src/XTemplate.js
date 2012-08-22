@@ -312,7 +312,7 @@ Ext.define('Ext.XTemplate', {
          * these templates are seldom actual instances but are rather configurations. For
          * example:
          *
-         *      Ext.define('MyApp.Class', {
+         *      Ext.define('GNApp.Class', {
          *          someTpl: [
          *              'tpl text here'
          *          ]
