@@ -1,5 +1,6 @@
 var mapdiv;
 var map;
+var flag = true;
 //TODO 나중에 하기 화면크기 적용 나중에 고민하자
 /*
 function detectBrowser() {

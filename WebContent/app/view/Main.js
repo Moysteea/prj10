@@ -10,7 +10,10 @@ Ext.define("GNApp.view.Main", {
         listeners: {
             activeitemchange: function (tabPanel, tab, oldTab) {
             	if("sharemainview" == tab.id){
-            		console.log("33");
+            		if(flag){
+            			initialize();
+            		}
+            		flag = false;
             	}
             } 
         }
