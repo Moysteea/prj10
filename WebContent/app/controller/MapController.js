@@ -155,23 +155,6 @@ Ext.define('GNApp.controller.MapController', {
     // 초기화 작업
     launch: function() {
     	initialize();
-    	/*
-    	canvas = document.getElementById('mapCanvas');
-		context = canvas.getContext('2d');
-		image = new Image();
-		image.src = 'http://sstatic.naver.net/keypage/lifesrch/worldmap/img2/img_worldmap7.png';
-		context.clearRect(0, 0, canvas.width, canvas.height);
-		image.onload = function() {
-			context.drawImage(image, 0, 0, canvas.width, canvas.height);
-			onPutFlag(0, 20, 20);
-        };   
-        canvas.addEventListener("click", onClickeMap, false);
-        overlayPanel = this.getFlagOverlay();
-        */
-        
-        
-        //overlayPanel.show();
-        //overlayPanel.showBy(this.getMapArea());
     	
 	}
     ,
