@@ -5,17 +5,22 @@ var sizeHeight = window.screen.availHeight / 3;
 html : [ '<canvas id="mapCanvas" width="' + 300 + '" height="' + 200 + '">Please HTML5</canvas><br>' ].join("")
 */
 Ext.define("GNApp.view.SharePanel", {
-	extend: "Ext.form.Panel",	
+	extend: "Ext.Panel",	
 	xtype: "sharepanel",	
-	id: "sharepanel",		
-	requires: [
-	    "Ext.form.FieldSet",
-	    "Ext.field.Text",
-	],	
+	id: "sharepanel",
+	/////////////////////
+	/*
+	title : "share",
+	iconCls: "user",
+	styleHtmlContent: true,
+	scrollable : false,
+	*/
+	/////////////////////
+	
 	config: {
-		scrollable: false,
-		title: "Login",
-		iconCls: "user",
+		//scrollable: false,
+		//title: "Login",
+		//iconCls: "user",
 		layout:{type:'vbox'},
 		
 		items: [

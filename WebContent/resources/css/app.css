@@ -7358,7 +7358,7 @@ audio {
 .x-toolbar.x-docked-left {
   width: 7em;
   height: auto;
-  padding: 0.2em;
+  padding: 0.3em;
   border-right: .1em solid;
 }
 /* line 61, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
@@ -7386,7 +7386,7 @@ audio {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0 .3em;
+  padding: 0 .2em;
 }
 
 /* line 128, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */

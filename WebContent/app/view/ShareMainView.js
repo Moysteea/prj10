@@ -2,8 +2,8 @@ Ext.define('GNApp.view.ShareMainView', {
 	extend : 'Ext.Panel',
 	xtype : 'sharemainview',
 	config : {
-		title : "나눔",
-		iconCls: "",
+		title : "share",
+		iconCls: "user",
 		styleHtmlContent: true,
 		scrollable : false,
 		id : 'sharemainview',
@@ -19,19 +19,17 @@ Ext.define('GNApp.view.ShareMainView', {
 					docked : 'top',
 				    flex: 1,
 				    items :[
-				            {xtype: 'button',
-				            	text: '후원하기',
-				            	ui: 'action',
-				            	align:'right'
+				            
+							
+									
+							
+				            {	xtype:'button',
+								text:'후원',
+								align:'right',
+								action:'sponsorship'
 				            	}
 				            ]
 				},
-				/*
-				{
-					xtype: "mappanel",
-					flex: 1
-				},
-				*/
 				{
 					xtype: "sharepanel",
 					flex: 3

@@ -1,6 +1,7 @@
 var mapdiv;
 
 //TODO 나중에 하기 화면크기 적용 나중에 고민하자
+/*
 function detectBrowser() {
   var useragent = navigator.userAgent;
   var mapdiv = document.getElementById("map_canvas");
@@ -13,7 +14,7 @@ function detectBrowser() {
     mapdiv.style.height = '800px';
   }
 }
-
+*/
 var regionString = new Array();
 regionString[0] = "차드";
 regionString[1] = "케냐";
