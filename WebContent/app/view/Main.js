@@ -11,7 +11,7 @@ Ext.define("GNApp.view.Main", {
                 {xtype:'newsView'},
                 {xtype:'mediaView'},
                 //{xtype:'shareView'}
-                {xtype:'sharepanel'}
+                {xtype:'sharemainview'}
         ]
     }
 });
