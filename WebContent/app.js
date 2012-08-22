@@ -12,7 +12,7 @@ Ext.application({
          ],
     views: [
             	'IntroduceView','NewsView','MediaView',
-            	'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay'
+            	'ShareMainView', 'SharePanel', 'AboutSchoolOverlay'
             ],
 
     icon: {
