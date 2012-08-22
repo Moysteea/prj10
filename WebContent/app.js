@@ -11,7 +11,7 @@ Ext.application({
              'sharePeoples', 'Tweets'
          ],
     views: [
-            	'IntroduceView','NewsView','MediaView','ShareView',
+            	'IntroduceView','NewsView','MediaView',
             	'ShareMainView', 'SharePanel', 'MapPanel', 'AboutSchoolOverlay'
             ],
 
