@@ -21,7 +21,8 @@ Ext.define("GNApp.view.NewsView", {
 	        styleHtmlContent: true,
 	        scrollable: false,
 	    	layout:'vbox',
-	        items: [{
+	        items: [
+	         {
 	            docked: "top",
 	            xtype: "titlebar",
 	            title: "소식",
