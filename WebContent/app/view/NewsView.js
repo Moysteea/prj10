@@ -11,6 +11,7 @@ var addNewsItem = function(idx){
 for(var idx=1; idx < 6; idx++ ){
 	itemFactory.push(addNewsItem(idx));
 }
+
 Ext.define("GNApp.view.NewsView", {
 	extend : 'Ext.Panel',
 	xtype:'newsView',
@@ -23,7 +24,14 @@ Ext.define("GNApp.view.NewsView", {
 	        items: [{
 	            docked: "top",
 	            xtype: "titlebar",
-	            title: "소식"
+	            title: "소식",
+	            items:{
+					xtype:'button',
+					text:'후원',
+					align:'right',
+					action:'sponsorship'
+						
+				}
 	        },
 	        
 	        {
