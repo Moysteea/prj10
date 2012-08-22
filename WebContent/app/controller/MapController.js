@@ -1,5 +1,5 @@
 var mapdiv;
-
+var map;
 //TODO 나중에 하기 화면크기 적용 나중에 고민하자
 /*
 function detectBrowser() {
@@ -15,6 +15,9 @@ function detectBrowser() {
   }
 }
 */
+
+
+
 var regionString = new Array();
 regionString[0] = "차드";
 regionString[1] = "케냐";
@@ -39,11 +42,12 @@ regionString[6] = "말라위";
       zoom: 3,
       center: centerLatlng,
       disableDefaultUI: true,
+      disableDoubleClickZoom: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     
    // 지도 객체 생성
-   var map = new google.maps.Map(document.getElementById("map_canvas"),
+   map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
 
    
