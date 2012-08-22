@@ -8,21 +8,9 @@ Ext.define("GNApp.view.SharePanel", {
 	extend: "Ext.Panel",	
 	xtype: "sharepanel",	
 	id: "sharepanel",
-	/////////////////////
-	/*
-	title : "share",
-	iconCls: "user",
-	styleHtmlContent: true,
-	scrollable : false,
-	*/
-	/////////////////////
 	
 	config: {
-		//scrollable: false,
-		//title: "Login",
-		//iconCls: "user",
 		layout:{type:'vbox'},
-		
 		items: [
 		        /*
 		        {

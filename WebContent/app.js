@@ -42,6 +42,7 @@ Ext.application({
 			fullscreen : true
 		});
 		*/
-        //Ext.Viewport.add(Ext.create('GNApp.view.ShareMainView'));
+       //Ext.Viewport.add(Ext.create('GNApp.view.ShareMainView'));
+        
     }
 });

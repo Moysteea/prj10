@@ -155,7 +155,7 @@ Ext.define('GNApp.controller.MapController', {
     
     // 초기화 작업
     launch: function() {
-    	initialize();
+    	//initialize();
     	
 	}
     ,

@@ -2,7 +2,7 @@ Ext.define('GNApp.view.ShareMainView', {
 	extend : 'Ext.Panel',
 	xtype : 'sharemainview',
 	config : {
-		title : "share",
+		title : "나눔",
 		iconCls: "user",
 		styleHtmlContent: true,
 		scrollable : false,
@@ -19,10 +19,6 @@ Ext.define('GNApp.view.ShareMainView', {
 					docked : 'top',
 				    flex: 1,
 				    items :[
-				            
-							
-									
-							
 				            {	xtype:'button',
 								text:'후원',
 								align:'right',
@@ -37,7 +33,6 @@ Ext.define('GNApp.view.ShareMainView', {
 				{
 					xtype: "aboutschooloverlay"
 				}
-				
 			]
 	}
 

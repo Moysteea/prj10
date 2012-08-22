@@ -4,6 +4,7 @@ Ext.define("GNApp.view.Main", {
         'Ext.TitleBar'
     ],
     config: {
+    	fullscreen: true,
         tabBarPosition: 'bottom',
         
         items: [
@@ -11,7 +12,6 @@ Ext.define("GNApp.view.Main", {
                 {xtype:'newsView'},
                 {xtype:'mediaView'},
                 {xtype:'sharemainview'}
-                //{xtype:'sharepanel'}
         ]
     }
 });
