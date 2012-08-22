@@ -15,6 +15,7 @@ Ext.define("GNApp.view.IntroduceView",{
 			extend : 'Ext.Panel',
 			xtype:'introduceView',
 			id:'introduceView',
+			requires:['Ext.data.proxy.JsonP','Ext.data.Store','Ext.dataview.List','Ext.carousel.Carousel','GNApp.view.Main'],
 			config : {
 				title : "소개",
 				iconCls : "",
@@ -26,6 +27,13 @@ Ext.define("GNApp.view.IntroduceView",{
 							docked : "top",
 							xtype : "titlebar",
 							title : "소개",
+							items:{
+								xtype:'button',
+								text:'후원',
+								align:'right',
+								action:'sponsorship'
+									
+							}
 						},
 						{
 							xtype : 'panel',
@@ -47,6 +55,7 @@ Ext.define("GNApp.view.IntroduceView",{
 										var itemLength = Ext.getCmp("introduceCaro").innerItems.length;
 										var storeLength = Ext.getStore("introduceImageListStore").data.length;
 										var currentIndex = Ext.getCmp("introduceCaro").getActiveIndex();
+										//width  console.log(Ext.getCmp("introduceCaro").itemLength); 
 										var cycleItemCount = 0;
 										if(itemLength - 2 == currentIndex){
 											for(var idx=itemLength+1; idx<=storeLength && cycleItemCount <5; idx++){
