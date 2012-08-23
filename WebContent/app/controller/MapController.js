@@ -17,7 +17,9 @@ function detectBrowser() {
 }
 */
 
-
+var a = function(b){
+	console.log(b);
+};
 
 var regionString = new Array();
 regionString[0] = "차드";
@@ -56,19 +58,26 @@ regionString[6] = "말라위";
    var schoolContent = new Array();
    for(var i = 0; i<7; i++){
 	   schoolContent[i] =
-	   '<img src = "resources/hopeforafrica.png" height="50"/>'+
+	   '<img src = "resources/hopeforafrica.png" width = "40" height="40"/> '+
+	   regionString[i] +
+	   ' 스쿨'+
+	   '<br>'+
+	   '<img src = "resources/flag.png" width = "30" height = "30" onclick="a(1)"/>';   
+   }
+   /*
+    
 	   '<div id = "mapContent">' +
 	   regionString[i] +
+	   ' 스쿨' + 
 	   '</div>';
 	   
-   }
-   
+    */
    // 팝업윈도우 설정
    var infowindowList = new Array();
    for(i = 0; i<7; i++){
 	   infowindowList[i] = new google.maps.InfoWindow({
 			  content : schoolContent[i],
-			  maxWidth: 200
+			  maxWidth: 300
 		   }); 
    }
 
