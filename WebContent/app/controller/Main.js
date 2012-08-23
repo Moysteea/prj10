@@ -30,14 +30,25 @@ Ext.define('GNApp.controller.Main', {
             },
             "#TweetData": {
                 itemtap: 'onDataItemTap'
+            },
+            "#TweetPreview": {
+            	activeitemchange: 'onCarouselSlide'
             }
         }
     },
 
     onButtonTap: function(button, e, options) {
+    	
+    	var toolbar = Ext.ComponentQuery.query('toolbar')[0];
+  	  
+  	    if(!toolbar.isHidden())
+  	 	   toolbar.setHidden(true);
+  	    else
+  		   toolbar.setHidden(false);
+    	
         button.hide();
         
-        this.getToolBar().setTitle('Gallery');
+        this.getToolBar().setTitle('Media');
         
         this.getMainView().animateActiveItem(0, { type: "slide",  direction: "right" });
 
@@ -46,16 +57,25 @@ Ext.define('GNApp.controller.Main', {
     },
     // dataview(Thumbnail) image itemtap event
     onDataItemTap: function(dataview, index, target, record, e, options) {
-        this.getMainView().animateActiveItem(1, { type: "slide", direction: "left" });
+        this.getMainView().animateActiveItem(1, { type: "fade" });
         
         this.getBackButton().show();
         
         /* index to each image */
     	this.getTweetPreview().setActiveItem(index);
-    	// carousel 의 상태를 숫자로
-        this.getToolBar().setActiveItem(index);
 
-        this.getToolBar().setTitle('<div>' + record.get('name') + '</div>'); /* each Carousel Title */
+        this.getToolBar().setTitle('into_Media'); /* Carousel Title */
+    	
+    	
+    },
+    onCarouselSlide: function(carousel, item){
+    	var currentindex = carousel.getActiveIndex();
+    	
+    	this.getToolBar().setActiveItem(currentindex);
+    	
+    	var toolbar = Ext.ComponentQuery.query('toolbar')[0];
 
+	  	toolbar.setHidden(true);
+	  	
     }
 });

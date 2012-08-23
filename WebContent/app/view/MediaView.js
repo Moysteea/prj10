@@ -12,7 +12,7 @@
  *
  * Do NOT hand edit this file.
  */
-var hideToolbar = function(){
+var hideToolbar = function(){ /* 이미지 클릭 시 문제가 생김... */
 
 	  var toolbar = Ext.ComponentQuery.query('toolbar')[0];
 	  
@@ -25,19 +25,19 @@ var hideToolbar = function(){
 
 var itemFactory = new Array();
 
-var addIntroItem = function(idx){
+var addMediaItem = function(idx){
 	var item = {
 			xtype: "dataview",
 			scrollable: false,
 			store: "medias",
-			itemTpl: '<div><tpl if="xindex=='+idx+'"><img src="{profile_image_url}" onClick="hideToolbar()" /></tpl></div>'
+			itemTpl: '<div><tpl if="xindex=='+idx+'"><img src="{profile_image_url}" style="width:60%"/></tpl></div>'
 	};
-
+	
 	return item;
 }; /* init carousel page */ 
 
 for(var idx=1; idx<7; idx++ ){
-	itemFactory.push(addIntroItem(idx));
+	itemFactory.push(addMediaItem(idx));
 };
 
 Ext.define('GNApp.view.MediaView', {
@@ -54,7 +54,7 @@ Ext.define('GNApp.view.MediaView', {
                 xtype: 'toolbar',
                 id: 'TweetToolbar',
                 docked: 'top',
-                title: 'Gallery123',
+                title: 'Media_Intro',
                 
                 items: [
                     {
@@ -83,10 +83,8 @@ Ext.define('GNApp.view.MediaView', {
                 xtype: 'carousel',
                 id: 'TweetPreview',
 	          	direction: 'horizontal',
-	          	indicator: true,
+	          	indicator: false,
 	          	
-	          	padding: '12px',
-          	    
                 items: itemFactory, /* Carousel image binding function to #TweetPreview */
 
             }
