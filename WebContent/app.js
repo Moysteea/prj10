@@ -2,13 +2,13 @@ Ext.application({
     name: 'GNApp',
     models: [
              'ItemVO','IntroduceImageListVO',
-             'GuestBook', 'Tweet'
+             'GuestBook', 'Tweet', 'media'
          ],
-	controllers : [ 'MapController', 'SponsorshipController' ],
+	controllers : [ 'MapController', 'SponsorshipController', 'Main' ],
 
     stores: [
              'ItemStore','IntroduceImageListStore',
-             'sharePeoples', 'Tweets'
+             'sharePeoples', 'Tweets', 'medias'
          ],
     views: [
             	'IntroduceView','NewsView','MediaView',
