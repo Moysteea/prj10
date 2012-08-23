@@ -31,7 +31,7 @@ Ext.define('GNApp.view.ShareMainView', {
 					flex: 3
 				},
 				{
-					xtype: "aboutschooloverlay"
+					xtype: "writecommentoverlay"
 				}
 			]
 	}

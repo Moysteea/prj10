@@ -12,20 +12,6 @@ Ext.define("GNApp.view.SharePanel", {
 	config: {
 		layout:{type:'vbox'},
 		items: [
-		        /*
-		        {
-		        	xtype: "panel",
-		        	id: "shareTopArea",
-		        	layout: {type: "hbox", pack : "justify"},
-		        	items :[
-		        	       {
-		        	    	   
-		        	    	   html:['<center><img src = "resources/gnmarker.jpg" height="25"/></center>']
-		        	       } 
-		        	       ]
-		        }
-		        ,
-		        */
 		        {
 		        	html:['<div id = "donationCondition"><center><b>현재까지 기부현황 : 총 500명 참여</b></center></div>']
 		        },
@@ -36,15 +22,6 @@ Ext.define("GNApp.view.SharePanel", {
 				id : 'mapArea',
 				html : ['<div id="map_canvas" style = "width : 100%; height : '+sizeHeight+'px;"></div>' ].join("")
 			},
-			/*
-			{   
-				xtype: "fieldset",
-				items: [
-					{ xtype: "textfield", 	name: "id", label: "Id" },
-					{ xtype: "textareafield", 	name: "comment", label: "Comment"}
-				]
-			},
-			*/
 			{
 				//글쓰기 버튼 지역
 				xtype: "panel",
@@ -55,12 +32,11 @@ Ext.define("GNApp.view.SharePanel", {
 				    	 html: ['<div id = "commentOfFlag">깃발을 클릭하면 자세히 볼 수 있습니다.</div>']  
 				       },
 						{
-							xtype: "button", id: "btnOk", action: "sendOk", height: "10",
+							xtype: "button", id: "btnWriteComment", action: "sendOk", height: "10",
 							text: "글쓰기", ui: "confirm", scale: 'small'
 						}
 				       ]
 			},
-			
 			{
 				// 게시물 지역
 				xtype : 'list',

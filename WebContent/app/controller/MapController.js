@@ -137,37 +137,19 @@ var image;
 var flag = new Array();
 
 
-var overlayPanel;
-
 // 컨트롤 시작
 Ext.define('GNApp.controller.MapController', {
     extend: 'Ext.app.Controller',
     config: {
         refs: {
-        	shareMainView : 'sharemainview',
-        	mapArea: 'mappanel #mapArea',
-        	inputArea: 'sharepanel #inputArea',
-        	flagOverlay: 'aboutschooloverlay'
         },
-
         control: {
-        	"#btnOk" : {
-        		tap : "onWriteComment"
-        	}
         }        
     },
-   
-    
     // 초기화 작업
     launch: function() {
     	//initialize();
     	
 	}
-    ,
-    //TODO 글쓰기 클릭, 오버레이 띄우는거 해야되
-    onWriteComment : function(btn, e){
-    	console.log("clcik!!!");
-    }
-    
     
 });

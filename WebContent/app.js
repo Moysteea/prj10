@@ -4,7 +4,7 @@ Ext.application({
              'ItemVO','IntroduceImageListVO',
              'GuestBook', 'Tweet', 'media'
          ],
-	controllers : [ 'MapController', 'SponsorshipController', 'Main' ],
+	controllers : [ 'MapController', 'SponsorshipController', 'Main' ,'BoardController'],
 
     stores: [
              'ItemStore','IntroduceImageListStore',
@@ -12,7 +12,7 @@ Ext.application({
          ],
     views: [
             	'IntroduceView','NewsView','MediaView',
-            	'ShareMainView', 'SharePanel', 'AboutSchoolOverlay'
+            	'ShareMainView', 'SharePanel','WriteCommentOverlay', 'AboutSchoolOverlay'
             ],
 
     icon: {
