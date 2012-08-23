@@ -54,7 +54,7 @@ Ext.define('GNApp.view.MediaView', {
                 xtype: 'toolbar',
                 id: 'TweetToolbar',
                 docked: 'top',
-                title: 'Gallery',
+                title: 'Gallery123',
                 
                 items: [
                     {
