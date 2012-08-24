@@ -1,5 +1,8 @@
+/**
+ * 지도관련 컨트롤
+ */
 var mapdiv;
-var map;
+var mapControllerContext;
 var flag = true;
 //TODO 나중에 하기 화면크기 적용 나중에 고민하자
 /*
@@ -17,9 +20,59 @@ function detectBrowser() {
 }
 */
 
-var a = function(b){
-	console.log(b);
-};
+/*
+희망학교 1호
+차드 요나스쿨
+위치 : 차드 파샤 아테레설립연도 : 2011년 월
+교육인원 :  000명
+시설 : 
+
+희망학교 2호
+차드 리앤차드스쿨
+위치 : 차드 도고레
+설립연도 : 2012년 3월
+교육인원 : 000명
+시설 : 
+
+희망학교 3호
+케냐 대교아이 스쿨
+위치 : 케냐 메구아라
+설립연도 : 2013년 8월 건립예정
+교육인원 : 500명
+시설 : 교실8개, 다용도실, 운동장
+         도서관, 주방시설, 화장실
+         교육기자재 구비
+
+희망학교 4호
+탄자니아 스쿨
+위치 : 
+설립연도 : 2011년 월 일
+교육인원 : 000명
+시설 : 
+
+				for(var i=0; i<phoneArray.length; i++) {
+							var phone = phoneArray[i];
+							var pno = phone.getAttribute("pno");
+							var pname = query.selectNode("pname", phone).childNodes[0].nodeValue;
+							var pimage = query.selectNode("pimage", phone).childNodes[0].nodeValue;
+
+							var item = {
+								html:	
+									"<table  style='width:100%;border:1px;border-bottom-style:solid;'>" +
+										"<tr>" + 
+											"<td style='width:50px; padding:5px'>" + pno+ "</td>" + 
+											"<td style='padding-left:5px'>" + pname + "</td>" + 
+											"<td style='text-align:right;padding:5px'>" + 
+												"<img style='width:30px;height:50px;' src='../image/" + pimage + "' border='0'/>" + 
+											"</td>" + 
+										"</tr>" + 
+									"</table>"
+							};
+							listPanel.add(item);
+						}
+
+ */
+
 
 var regionString = new Array();
 regionString[0] = "차드";
@@ -29,6 +82,60 @@ regionString[3] = "에티오피아";
 regionString[4] = "이집트";
 regionString[5] = "탄자니아";
 regionString[6] = "말라위";
+
+var currentIdx; 
+
+var showDetailOfSchool = function(data){
+	
+	currentIdx = data;
+	var commonAboutSchool = "<div>희망학교 "+ data+"호</div>" +
+							"<div>"+regionString[data]+"스쿨</div>" + 
+							"<div>위치 : "+regionString[data]+"</div>"+
+							"설립연도 : <br>"+
+							"교육인원 : <br>"+
+							"시설 : ";
+	
+
+	switch(data){
+	case 0:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 1:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 2:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 3:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 4:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 5:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	case 6:
+		mapControllerContext.getSchoolImage1().setSrc("resources/schoolsample1.png");
+		mapControllerContext.getSchoolImage2().setSrc("resources/schoolsample2.png");
+		mapControllerContext.getSchoolText().setHtml(commonAboutSchool);
+		break;
+	}
+	mapControllerContext.getAboutSchoolOverlay().show();
+};
+
 // 초기화 지도 렌더링
  function initialize() {
 	 // 초기 위치 설정
@@ -50,7 +157,7 @@ regionString[6] = "말라위";
     };
     
    // 지도 객체 생성
-   map = new google.maps.Map(document.getElementById("map_canvas"),
+   var map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
 
    
@@ -58,20 +165,11 @@ regionString[6] = "말라위";
    var schoolContent = new Array();
    for(var i = 0; i<7; i++){
 	   schoolContent[i] =
-	   '<img src = "resources/hopeforafrica.png" width = "40" height="40"/> '+
+	   '<img src = "resources/schoolsample1.png" width = "40" height="40"/> '+
 	   regionString[i] +
 	   ' 스쿨'+
-	   '<br>'+
-	   '<img src = "resources/flag.png" width = "30" height = "30" onclick="a(1)"/>';   
+	   '<img src = "resources/Arrow-Right-blue-48.png" width = "30" height = "30" onclick="showDetailOfSchool('+i+')" align = "right"/>';   
    }
-   /*
-    
-	   '<div id = "mapContent">' +
-	   regionString[i] +
-	   ' 스쿨' + 
-	   '</div>';
-	   
-    */
    // 팝업윈도우 설정
    var infowindowList = new Array();
    for(i = 0; i<7; i++){
@@ -108,6 +206,15 @@ regionString[6] = "말라위";
 	   })(i);
    }
   
+   
+   google.maps.event.addListener(map, 'click', function() {
+	   for(i = 0; i<7; i++){
+			(function(n){
+					infowindowList[n].close();	   
+			   })(i);
+	   }
+	    });
+   
 }
 
 
@@ -151,14 +258,16 @@ Ext.define('GNApp.controller.MapController', {
     extend: 'Ext.app.Controller',
     config: {
         refs: {
+        	aboutSchoolOverlay : 'aboutschooloverlay',
+        	schoolImage1 : 'aboutschooloverlay #schoolImage1',
+        	schoolImage2 : 'aboutschooloverlay #schoolImage2',
+        	schoolText : 'aboutschooloverlay #schoolText'
         },
         control: {
         }        
     },
     // 초기화 작업
     launch: function() {
-    	//initialize();
-    	
+    	mapControllerContext = this;
 	}
-    
 });

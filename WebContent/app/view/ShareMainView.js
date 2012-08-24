@@ -32,6 +32,9 @@ Ext.define('GNApp.view.ShareMainView', {
 				},
 				{
 					xtype: "writecommentoverlay"
+				},
+				{
+					xtype: "aboutschooloverlay"
 				}
 			]
 	}

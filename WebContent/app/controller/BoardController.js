@@ -1,4 +1,7 @@
-// 컨트롤 시작
+/**
+ * 게시판에 글작성 관련 컨트롤
+ */
+
 Ext.define('GNApp.controller.BoardController', {
     extend: 'Ext.app.Controller',
     config: {
