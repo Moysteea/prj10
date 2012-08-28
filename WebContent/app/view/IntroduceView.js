@@ -27,13 +27,21 @@ Ext.define("GNApp.view.IntroduceView",{
 							docked : "top",
 							xtype : "titlebar",
 							title : "소개",
-							items:{
+							items:[
+							   {
 								xtype:'button',
 								text:'후원',
 								align:'right',
-								action:'sponsorship'
-									
-							}
+								id:'sponsorshipBtn'
+							   },
+							   {
+								xtype:'button',
+								text:'뒤로',
+								id:'backBtn',
+								ui:'back'
+								
+							   }
+							]
 						},
 						{
 							xtype : 'panel',

@@ -26,13 +26,20 @@ Ext.define("GNApp.view.NewsView", {
 	            docked: "top",
 	            xtype: "titlebar",
 	            title: "소식",
-	            items:{
-					xtype:'button',
-					text:'후원',
-					align:'right',
-					action:'sponsorship'
-						
-				}
+	            items:[
+					   {
+						xtype:'button',
+						text:'후원',
+						align:'right',
+						id:'sponsorshipBtn'
+					   },
+					   {
+						xtype:'button',
+						text:'뒤로',
+						id:'backBtn',
+						ui:'back'
+					   }
+					]
 	        },
 	        
 	        {

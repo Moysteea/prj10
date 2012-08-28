@@ -18,13 +18,21 @@ Ext.define('GNApp.view.ShareMainView', {
 					title: "나눔",
 					docked : 'top',
 				    flex: 1,
-				    items :[
-				            {	xtype:'button',
-								text:'후원',
-								align:'right',
-								action:'sponsorship'
-				            	}
-				            ]
+				    items:[
+						   {
+							xtype:'button',
+							text:'후원',
+							align:'right',
+							id:'sponsorshipBtn'
+						   },
+						   {
+							xtype:'button',
+							text:'뒤로',
+							id:'backBtn',
+							ui:'back'
+							
+						   }
+						]
 				},
 				{
 					xtype: "sharepanel",

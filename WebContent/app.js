@@ -4,7 +4,7 @@ Ext.application({
              'ItemVO','IntroduceImageListVO',
              'GuestBook', 'Tweet', 'media'
          ],
-	controllers : [ 'MapController', 'SponsorshipController', 'Main' ,'BoardController'],
+	controllers : [ 'MapController', 'TitleController', 'Main' ,'BoardController','MainController'],
 
     stores: [
              'ItemStore','IntroduceImageListStore',
