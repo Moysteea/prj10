@@ -1,7 +1,7 @@
 var sizeWidth = window.screen.availWidth / 2;
 var sizeHeight = window.screen.availHeight / 3;
 
-Ext.define("GNApp.view.WriteCommentOverlay", {
+Ext.define("GNApp.view.share.WriteCommentOverlay", {
 	extend:'Ext.Panel',
 	xtype: 'writecommentoverlay',
 	requires: [

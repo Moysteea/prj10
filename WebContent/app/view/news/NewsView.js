@@ -12,7 +12,7 @@ for(var idx=1; idx < 6; idx++ ){
 	itemFactory.push(addNewsItem(idx));
 }
 
-Ext.define("GNApp.view.NewsView", {
+Ext.define("GNApp.view.news.NewsView", {
 	extend : 'Ext.Panel',
 	xtype:'newsView',
 	config: {
@@ -22,26 +22,7 @@ Ext.define("GNApp.view.NewsView", {
 	        scrollable: false,
 	    	layout:'vbox',
 	        items: [
-	         {
-	            docked: "top",
-	            xtype: "titlebar",
-	            title: "소식",
-	            items:[
-					   {
-						xtype:'button',
-						text:'후원',
-						align:'right',
-						id:'sponsorshipBtn'
-					   },
-					   {
-						xtype:'button',
-						text:'뒤로',
-						id:'backBtn',
-						ui:'back'
-					   }
-					]
-	        },
-	        
+	                {xtype:'toptitlebar'},
 	        {
 				xtype : 'list',
 				flex: 1,

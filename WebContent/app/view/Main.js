@@ -1,11 +1,11 @@
 Ext.define("GNApp.view.Main", {
-    extend: 'Ext.Panel',
+    extend: 'Ext.tab.Panel',
     id:'mainPanel',
     requires: [
         'Ext.TitleBar'
     ],
-    
     config: {
+    	tabBarPosition: 'bottom',
     	fullscreen: true,
     	layout:'card',
         listeners: {
@@ -18,40 +18,7 @@ Ext.define("GNApp.view.Main", {
             	}
             } 
         },
-        
-        
-        
         items: [
-                {
-                	xtype:'panel',
-                	layout:'hbox',
-                	items:[
-		                {
-		                	xtype:'button',
-		                	style:'width:100px;height:100px',
-		                	text:'소개',
-		                	id:'introduceButton'
-		                },
-		                {
-		                	xtype:'button',
-		                	style:'width:100px;height:100px',
-		                	text:'소식',
-		                	id:'newsButton'
-		                },
-		                {
-		                	xtype:'button',
-		                	style:'width:100px;height:100px',
-		                	text:'미디어',
-		                	id:'mediaButton'
-		                }, {
-		                	xtype:'button',
-		                	style:'width:100px;height:100px',
-		                	text:'나눔',
-		                	id:'shareButton'
-		                }
-			         ]
-                
-                }, 
                 {xtype:'introduceView'},
                 {xtype:'newsView'},
                 {xtype:'mediaView'},

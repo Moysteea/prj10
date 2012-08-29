@@ -40,7 +40,7 @@ for(var idx=1; idx<7; idx++ ){
 	itemFactory.push(addMediaItem(idx));
 };
 
-Ext.define('GNApp.view.MediaView', {
+Ext.define('GNApp.view.media.MediaView', {
     extend: 'Ext.Panel',
     xtype: 'mediaView',
     config: {
@@ -50,23 +50,7 @@ Ext.define('GNApp.view.MediaView', {
             type: 'card'
         },
         items: [
-            {
-                xtype: 'toolbar',
-                id: 'TweetToolbar',
-                docked: 'top',
-                title: 'Media_Intro',
-                
-                items: [
-                    {
-                        xtype: 'button',
-                        hidden: true,
-                        id: 'Back',
-                        ui: 'back',
-                        text: 'Back',
-                        action: 'back'
-                    }
-                ],
-            },
+                {xtype:'toptitlebar'},
             {
                 xtype: 'dataview',
                 id: 'TweetData',

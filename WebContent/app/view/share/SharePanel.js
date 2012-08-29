@@ -4,7 +4,7 @@ var sizeHeight = window.screen.availHeight / 3;
 /*
 html : [ '<canvas id="mapCanvas" width="' + 300 + '" height="' + 200 + '">Please HTML5</canvas><br>' ].join("")
 */
-Ext.define("GNApp.view.SharePanel", {
+Ext.define("GNApp.view.share.SharePanel", {
 	extend: "Ext.Panel",	
 	xtype: "sharepanel",	
 	id: "sharepanel",

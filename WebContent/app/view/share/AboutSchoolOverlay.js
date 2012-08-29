@@ -3,7 +3,7 @@ if(currentIdx == null){
 	var currentIdx = "null";
 }
 
-Ext.define("GNApp.view.AboutSchoolOverlay", {
+Ext.define("GNApp.view.share.AboutSchoolOverlay", {
 	extend:'Ext.Panel',
 	xtype: 'aboutschooloverlay',
 	requires:['Ext.Img'],

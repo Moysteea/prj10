@@ -11,7 +11,7 @@ var addIntroItem = function(idx){
 for(var idx=1; idx < 6; idx++ ){
 	itemFactory.push(addIntroItem(idx));
 }
-Ext.define("GNApp.view.IntroduceView",{
+Ext.define("GNApp.view.introduce.IntroduceView",{
 			extend : 'Ext.Panel',
 			xtype:'introduceView',
 			id:'introduceView',
@@ -23,26 +23,7 @@ Ext.define("GNApp.view.IntroduceView",{
 				scrollable : false,
 				layout : 'vbox',
 				items : [
-						{
-							docked : "top",
-							xtype : "titlebar",
-							title : "소개",
-							items:[
-							   {
-								xtype:'button',
-								text:'후원',
-								align:'right',
-								id:'sponsorshipBtn'
-							   },
-							   {
-								xtype:'button',
-								text:'뒤로',
-								id:'backBtn',
-								ui:'back'
-								
-							   }
-							]
-						},
+				        {xtype:'toptitlebar'},
 						{
 							xtype : 'panel',
 							flex : 2,

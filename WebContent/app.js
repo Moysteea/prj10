@@ -2,17 +2,17 @@ Ext.application({
     name: 'GNApp',
     models: [
              'ItemVO','IntroduceImageListVO',
-             'GuestBook', 'Tweet', 'media'
+             'GuestBook', 'media'
          ],
-	controllers : [ 'MapController', 'TitleController', 'Main' ,'BoardController','MainController'],
+	controllers : [ 'MapController', 'TitleController', 'Main' ,'BoardController'],
 
     stores: [
              'ItemStore','IntroduceImageListStore',
-             'sharePeoples', 'Tweets', 'medias'
+             'sharePeoples', 'medias'
          ],
     views: [
-            	'IntroduceView','NewsView','MediaView',
-            	'ShareMainView', 'SharePanel','WriteCommentOverlay', 'AboutSchoolOverlay'
+            	'introduce.IntroduceView','news.NewsView','media.MediaView', 'title.TitleView',
+            	'share.ShareMainView', 'share.SharePanel','share.WriteCommentOverlay', 'share.AboutSchoolOverlay'
             ],
 
     icon: {
