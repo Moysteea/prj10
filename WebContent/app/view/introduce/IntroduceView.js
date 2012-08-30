@@ -4,11 +4,11 @@ var addIntroItem = function(idx){
 			xtype : "dataview",
 			scrollable : false,
 			store: "introduceImageListStore",
-			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" /></tpl></div>'
+			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" style="width:320px"/></tpl></div>'
 	};
 	return item;
 };/*init carousel page*/ 
-for(var idx=1; idx < 6; idx++ ){
+for(var idx=1; idx <= 4; idx++ ){
 	itemFactory.push(addIntroItem(idx));
 }
 Ext.define("GNApp.view.introduce.IntroduceView",{
@@ -17,25 +17,26 @@ Ext.define("GNApp.view.introduce.IntroduceView",{
 			id:'introduceView',
 			requires:['Ext.data.proxy.JsonP','Ext.data.Store','Ext.dataview.List','Ext.carousel.Carousel','GNApp.view.Main'],
 			config : {
-				title : "소개",
-				iconCls : "",
 				styleHtmlContent : true,
-				scrollable : false,
+				scrollable : {  direction: 'vertical'
+								},
 				layout : 'vbox',
 				items : [
 				        {xtype:'toptitlebar'},
 						{
 							xtype : 'panel',
-							flex : 2,
-							style:'background-color:#e2e2e2;',
 							html:[
-									'<video controls poster="http://gntestserver.appspot.com/Image/ev01.png" width="320" height="240">',
-									'<source src="http://gntestserver.appspot.com/video/bw01.mp4" type="video/mp4"/>',
-									'</video>'
+							      	'<img src="../../../GNApp/resources/images/introduce/introduce_top_image.png" style="width:320px;height:49.5px"/><br/>'+
+							      	'<img src="../../../GNApp/resources/images/introduce/introduce_top_text.png" style="width:319px;height:34.5px"/><br/>'+
+							      	'<img src="../../../GNApp/resources/images/introduce/introduce_main.png" style="width:320px;height:337.5px"/>'+
+									'<div style="width:260px;height:153px;position:absolute;top:153px;left:30px">'+
+							      	'<video controls poster="http://gntestserver.appspot.com/Image/ev01.png" width=260 height=150>'+
+									'<source src="http://gntestserver.appspot.com/video/bw01.mp4" type="video/mp4"/>'+
+									'</video></div>'
 							      ]
 						}, {
 							xtype : "carousel",
-							flex : 1,
+							style:'height:170px',
 							id: "introduceCaro",
 							items :  itemFactory,
 							listeners:{

@@ -10,7 +10,7 @@ Ext.define('GNApp.store.IntroduceImageListStore', {
         storeId: 'introduceImageListStore',
         proxy: {
             type: 'jsonp',
-            url: 'http://gntestserver.appspot.com/imageList.jsp',
+            url: 'http://gnimageserver.appspot.com/GNImageList.jsp?type=introduce',
             callbackKey:'GNCallBack',
             reader: {
                 type: 'json'

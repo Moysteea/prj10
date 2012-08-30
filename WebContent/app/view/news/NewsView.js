@@ -3,8 +3,8 @@ var addNewsItem = function(idx){
 	var item = {
 			xtype : "dataview",
 			scrollable : false,
-			store: "ItemValues",
-			itemTpl : ' <div style="width:300px;text-align:center"><tpl if="xindex=='+idx+'"><img src="{image}" style="width:300px;height:300px;"/></tpl></div>'
+			store: "newsImageListStore",
+			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" style="width:302.5px;"/></tpl></div>'
 	};
 	return item;
 };/*init carousel page*/ 
@@ -16,45 +16,47 @@ Ext.define("GNApp.view.news.NewsView", {
 	extend : 'Ext.Panel',
 	xtype:'newsView',
 	config: {
-		 title: "소식",
-	        iconCls: "",
 	        styleHtmlContent: true,
 	        scrollable: false,
 	    	layout:'vbox',
 	        items: [
 	                {xtype:'toptitlebar'},
-	        {
-				xtype : 'list',
-				flex: 1,
-				itemTpl : [
-						'<div style="margin: 5px; overflow:hidden; height:80px;">',
-						'<div style="float:left"><img src="{image}" /></div> ',
-						'<div>{seq}. {name} {content}</div>',
-						'</div>' ],
-				store : 'ItemValues'
-			},
-			{
-				xtype : "carousel",
-				flex : 3,
-				id: "introduceCaro2",
-				items :  itemFactory,
-				listeners:{
-					tapstart:{
-						fn:function(event){
-							var itemLength = Ext.getCmp("introduceCaro2").innerItems.length;
-							var storeLength = Ext.getStore("ItemValues").data.length;
-							var currentIndex = Ext.getCmp("introduceCaro2").getActiveIndex();
-							var cycleItemCount = 0;
-							if(itemLength - 2 == currentIndex){
-								for(var idx=itemLength+1; idx<=storeLength && cycleItemCount <5; idx++){
-									cycleItemCount++;
-									Ext.getCmp("introduceCaro2").add(addNewsItem(idx));
+	                {
+	                	xtype:'panel',
+	                	html:[
+							'<img src="../../../GNApp/resources/images/news/news_top_image.png" style="width:320px;height:49.5px"/><br/>'+
+							'<img src="../../../GNApp/resources/images/news/news_top_text.png" style="width:319px;height:34.5px"/><br/>'
+							]},
+				{
+					xtype : "carousel",
+					id: "newsCaro",
+					style:'height:280px',
+					items :  itemFactory,
+					listeners:{
+						tapstart:{
+							fn:function(event){
+								var itemLength = Ext.getCmp("newsCaro").innerItems.length;
+								var storeLength = Ext.getStore("newsImageListStore").data.length;
+								var currentIndex = Ext.getCmp("newsCaro").getActiveIndex();
+								var cycleItemCount = 0;
+								if(itemLength - 2 == currentIndex){
+									for(var idx=itemLength+1; idx<=storeLength && cycleItemCount <5; idx++){
+										cycleItemCount++;
+										Ext.getCmp("newsCaro").add(addNewsItem(idx));
+									}
 								}
-							}
-						},element:"element"
+							},element:"element"
+						}
 					}
-				}
-			}
+				},
+				{
+					xtype:'panel',
+					layout:'hbox',
+					items:[
+					       {xtype:'button',id:'manySponseBtn'},
+					       {xtype:'button',id:'onceSponseBtn'}
+					       ]
+					}
 	       ]
 	}
 });

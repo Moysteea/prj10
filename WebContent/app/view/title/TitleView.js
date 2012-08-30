@@ -7,11 +7,14 @@ config:
 		xtype : "titlebar",
 		items:[
 		   {
+			   xtype:'image',
+			   id:'titleText'
+		   },
+		   {
 			xtype:'button',
-			text:'후원',
 			align:'right',
-			id:'sponsorshipBtn'
-		   }
+			id:'sponsorshipBtn',
+		   }	
 		]
 	}
 });

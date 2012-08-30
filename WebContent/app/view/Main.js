@@ -1,5 +1,5 @@
 Ext.define("GNApp.view.Main", {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Panel',
     id:'mainPanel',
     requires: [
         'Ext.TitleBar'
@@ -18,12 +18,28 @@ Ext.define("GNApp.view.Main", {
             	}
             } 
         },
+        
         items: [
-                {xtype:'introduceView'},
-                {xtype:'newsView'},
-                {xtype:'mediaView'},
-                {xtype:'sharemainview'}
+				{xtype:'introduceView',style:'background-color:#fff'},
+				{xtype:'newsView',style:'background-color:#fff'},
+				{xtype:'mediaView',style:'background-color:#fff'},
+				{xtype:'sharemainview',style:'background-color:#fff'},
+					{
+                	xtype:'panel',
+                	layout:'hbox',
+                	docked:'bottom',
+                	items:[
+                	       {xtype:'button',id:'introduceBtn'},
+                	       {xtype:'button',id:'newsBtn'},
+                	       {xtype:'button',id:'mediaBtn'},
+                	       {xtype:'button',id:'shareBtn'}
+                	  ]
+                		
+                }
+               
         ]
+        
+        
     }
     
 });
