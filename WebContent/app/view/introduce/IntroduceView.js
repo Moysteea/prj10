@@ -18,8 +18,7 @@ Ext.define("GNApp.view.introduce.IntroduceView",{
 			requires:['Ext.data.proxy.JsonP','Ext.data.Store','Ext.dataview.List','Ext.carousel.Carousel','GNApp.view.Main'],
 			config : {
 				styleHtmlContent : true,
-				scrollable : {  direction: 'vertical'
-								},
+				scrollable : {  direction: 'vertical'},
 				layout : 'vbox',
 				items : [
 				        {xtype:'toptitlebar'},

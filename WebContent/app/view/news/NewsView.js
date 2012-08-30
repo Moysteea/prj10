@@ -18,6 +18,7 @@ Ext.define("GNApp.view.news.NewsView", {
 	config: {
 	        styleHtmlContent: true,
 	        scrollable: false,
+	        scrollable : {  direction: 'vertical'},
 	    	layout:'vbox',
 	        items: [
 	                {xtype:'toptitlebar'},
