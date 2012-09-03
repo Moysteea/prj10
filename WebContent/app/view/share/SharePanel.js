@@ -36,24 +36,8 @@ Ext.define("GNApp.view.share.SharePanel", {
 							text: "글쓰기", ui: "confirm", scale: 'small'
 						}
 				       ]
-			},
-			{
-				// 게시물 지역
-				xtype : 'list',
-				itemId : 'tweetList',
-				itemTpl : [
-						'<div style="float:left; width: 60px;">',
-						'  <img src="{profile_image_url}">',
-						'</div>',
-						'<div style="margin-left: 62px;">',
-						'  {text}<br>{created_at:date("d M Y")}<br/>',
-						'{id}<br/>',
-						'{description}',
-						'</div>' ],
-				store : 'Tweets',
-				flex: 1
-				
 			}
+			
 			
 		]
 	}

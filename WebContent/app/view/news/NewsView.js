@@ -25,8 +25,8 @@ Ext.define("GNApp.view.news.NewsView", {
 	                {
 	                	xtype:'panel',
 	                	html:[
-							'<img src="../../../GNApp/resources/images/news/news_top_image.png" style="width:320px;height:49.5px"/><br/>'+
-							'<img src="../../../GNApp/resources/images/news/news_top_text.png" style="width:319px;height:34.5px"/><br/>'
+							'<img src="./resources/images/news/news_top_image.png" style="width:320px;height:49.5px"/><br/>'+
+							'<img src="./resources/images/news/news_top_text.png" style="width:319px;height:34.5px"/><br/>'
 							]},
 				{
 					xtype : "carousel",

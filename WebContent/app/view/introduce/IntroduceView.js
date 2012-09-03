@@ -25,9 +25,9 @@ Ext.define("GNApp.view.introduce.IntroduceView",{
 						{
 							xtype : 'panel',
 							html:[
-							      	'<img src="../../../GNApp/resources/images/introduce/introduce_top_image.png" style="width:320px;height:49.5px"/><br/>'+
-							      	'<img src="../../../GNApp/resources/images/introduce/introduce_top_text.png" style="width:319px;height:34.5px"/><br/>'+
-							      	'<img src="../../../GNApp/resources/images/introduce/introduce_main.png" style="width:320px;height:337.5px"/>'+
+							      	'<img src="./resources/images/introduce/introduce_top_image.png" style="width:320px;height:49.5px"/><br/>'+
+							      	'<img src="./resources/images/introduce/introduce_top_text.png" style="width:319px;height:34.5px"/><br/>'+
+							      	'<img src="./resources/images/introduce/introduce_main.png" style="width:320px;height:337.5px"/>'+
 									'<div style="width:260px;height:153px;position:absolute;top:153px;left:30px">'+
 							      	'<video controls poster="http://gntestserver.appspot.com/Image/ev01.png" width=260 height=150>'+
 									'<source src="http://gntestserver.appspot.com/video/bw01.mp4" type="video/mp4"/>'+
