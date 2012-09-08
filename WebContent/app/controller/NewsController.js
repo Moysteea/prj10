@@ -3,6 +3,7 @@ Ext.define("GNApp.controller.NewsController",{
 	
 	config: {
         refs: {
+        	mainPanel : "#mainPanel",
         },
 
         control: {
@@ -15,9 +16,9 @@ Ext.define("GNApp.controller.NewsController",{
 			}
         },
     onOnceSponseBtnTap:function(){
-        location.href='http://m.goodneighbors.kr/Payment/onceSuppt.asp';
+    	sponsorshipButton(this.getMainPanel(),"http://m.goodneighbors.kr/Payment/onceSuppt.asp");
 	},
 	onManySponseBtnTap:function(){
-		location.href='http://m.goodneighbors.kr/Payment/bizsuppt.asp?campaigncd=1879';
+		sponsorshipButton(this.getMainPanel(),"http://m.goodneighbors.kr/Payment/bizsuppt.asp?campaigncd=1879");
 	}
 });

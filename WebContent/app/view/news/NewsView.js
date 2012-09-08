@@ -4,7 +4,7 @@ var addNewsItem = function(idx){
 			xtype : "dataview",
 			scrollable : false,
 			store: "newsImageListStore",
-			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" style="width:302.5px;"/></tpl></div>'
+			itemTpl : ' <div style="width:100%;height:100%"><tpl if="xindex=='+idx+'"><img src="{image}" style="width:100%;height:100%"/></tpl></div>'
 	};
 	return item;
 };/*init carousel page*/ 
@@ -18,20 +18,19 @@ Ext.define("GNApp.view.news.NewsView", {
 	config: {
 	        styleHtmlContent: true,
 	        scrollable: false,
-	        scrollable : {  direction: 'vertical'},
 	    	layout:'vbox',
 	        items: [
 	                {xtype:'toptitlebar'},
 	                {
 	                	xtype:'panel',
 	                	html:[
-							'<img src="./resources/images/news/news_top_image.png" style="width:320px;height:49.5px"/><br/>'+
-							'<img src="./resources/images/news/news_top_text.png" style="width:319px;height:34.5px"/><br/>'
+							'<img src="./resources/images/news/news_top_image.png" style="width:100%;height:12.37%"/><br/>'+
+							'<img src="./resources/images/news/news_top_text.png" style="width:100%;height:8.62%"/><br/>'
 							]},
 				{
 					xtype : "carousel",
 					id: "newsCaro",
-					style:'height:280px',
+					style:'height:230px;margin-bottom:15px',
 					items :  itemFactory,
 					listeners:{
 						tapstart:{

@@ -4,7 +4,7 @@ var addIntroItem = function(idx){
 			xtype : "dataview",
 			scrollable : false,
 			store: "introduceImageListStore",
-			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" style="width:320px"/></tpl></div>'
+			itemTpl : ' <div><tpl if="xindex=='+idx+'"><img src="{image}" style="width:100%;height:100%" /></tpl></div>'
 	};
 	return item;
 };/*init carousel page*/ 
@@ -25,12 +25,12 @@ Ext.define("GNApp.view.introduce.IntroduceView",{
 						{
 							xtype : 'panel',
 							html:[
-							      	'<img src="./resources/images/introduce/introduce_top_image.png" style="width:320px;height:49.5px"/><br/>'+
-							      	'<img src="./resources/images/introduce/introduce_top_text.png" style="width:319px;height:34.5px"/><br/>'+
-							      	'<img src="./resources/images/introduce/introduce_main.png" style="width:320px;height:337.5px"/>'+
-									'<div style="width:260px;height:153px;position:absolute;top:153px;left:30px">'+
-							      	'<video controls poster="http://gntestserver.appspot.com/Image/ev01.png" width=260 height=150>'+
-									'<source src="http://gntestserver.appspot.com/video/bw01.mp4" type="video/mp4"/>'+
+							      	'<img src="./resources/images/introduce/introduce_top_image.png" style="width:100%;height:12.37%"/><br/>'+
+							      	'<img src="./resources/images/introduce/introduce_top_text.png" style="width:100%;height:8.64%"/><br/>'+
+							      	'<img src="./resources/images/introduce/introduce_main.png" style="width:100%;height:78.99%"/>'+
+									'<div style="width:80.46%;height:37.18%;position:absolute;top:38%;left:10%">'+
+							      	'<video controls poster="" width="95%" height="95%">'+
+									'<source src="http://www.goodneighbors.kr/campaign/2012/gn/afschool/images/hope.webm" type="video/mp4"/>'+
 									'</video></div>'
 							      ]
 						}, {
@@ -44,7 +44,6 @@ Ext.define("GNApp.view.introduce.IntroduceView",{
 										var itemLength = Ext.getCmp("introduceCaro").innerItems.length;
 										var storeLength = Ext.getStore("introduceImageListStore").data.length;
 										var currentIndex = Ext.getCmp("introduceCaro").getActiveIndex();
-										//width  console.log(Ext.getCmp("introduceCaro").itemLength); 
 										var cycleItemCount = 0;
 										if(itemLength - 2 == currentIndex){
 											for(var idx=itemLength+1; idx<=storeLength && cycleItemCount <5; idx++){

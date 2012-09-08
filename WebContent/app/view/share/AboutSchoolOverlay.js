@@ -12,38 +12,33 @@ Ext.define("GNApp.view.share.AboutSchoolOverlay", {
 		centered:true,
 		hidden:true,
 		hideOnMaskTap:true,
-		width: 300, height: 360,
-		layout: 'vbox',
+		 transparent: true,
+		frame: false,
+		border: false,
+		style: 'background: transparent;',
+		
 		items:[ 
 		{ 
-			xtype:"titlebar",
 			docked:"top",
-			title:"about School"
 		},
 		
 		{
 			layout: 'hbox',
-			flex:1,
+			 style: 'background: transparent;',
+			 transparent: true,
 			items:[
-					{
-						xtype:'image',
+			       {
+			    	   xtype:'image',
 						id : 'schoolImage1',
-						flex :1
-					},
-					{
-						xtype:'image',
-						id : 'schoolImage2',
-						flex :1
-					}
+						style: 'background: transparent;',
+						transparent: true,
+						
+			    	   html: [
+			    	          '<canvas id="school_canvas" width="381;" height="349;"/>'
+			    	          ]
+			       }
 				]
-		}	
-		,
-		{
-            xtype: 'panel',
-            id : 'schoolText',
-            flex: 2,
-        }
-		],
-		scrollable: true,
+		}
+		]
 	}
 });

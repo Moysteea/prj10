@@ -11,19 +11,18 @@ Ext.application({
              'sharePeoples', 'medias','NewsImageListStore'
          ],
     views: [
-            	'introduce.IntroduceView','news.NewsView','media.MediaView', 'title.TitleView',
-            	'share.ShareMainView', 'share.SharePanel','share.WriteCommentOverlay', 'share.AboutSchoolOverlay'
+            	'introduce.IntroduceView','news.NewsView','media.MediaView','title.TitleView',
+            	'share.ShareMainView', 'share.AboutSchoolOverlay'
             ],
 
     icon: {
-        '57': 'resources/icons/Icon.png',
-        '72': 'resources/icons/Icon~ipad.png',
-        '114': 'resources/icons/Icon@2x.png',
-        '144': 'resources/icons/Icon~ipad@2x.png'
+        '57': 'resources/icons/57-57_icon.png',
+        '72': 'resources/icons/72-72_icon_02_.png',
+        '114': 'resources/icons/114-114_icon.png',
+        '144': 'resources/icons/144-144_icon.png'
     },
 
     isIconPrecomposed: true,
-
     startupImage: {
         '320x460': 'resources/startup/320x460.jpg',
         '640x920': 'resources/startup/640x920.png',

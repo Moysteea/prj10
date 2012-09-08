@@ -25,7 +25,7 @@ Ext.define('GNApp.store.medias', {
         storeId: 'medias',
         proxy: {
             type: 'jsonp',
-            url: 'http://gntestserver.appspot.com/pokeList.jsp',
+            url: 'http://gnimageserver.appspot.com/GNImageList.jsp?type=media',
             callbackKey: 'GNCallBack',
             
             reader: {

@@ -5,7 +5,7 @@
 	 * This is the name of your application, which is displayed on the device when the app is installed. On IOS, this should match
 	 * the name of your application in the Apple Provisioning Portal.
 	 */
-	"applicationName":"My Application",
+	"applicationName":"HopeForAfrica",
 
 	/**
 	 * @cfg {String} applicationId
@@ -31,7 +31,7 @@
 	 * For Android, please refer to the Google Launcher icons guide:
 	 * http://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html
 	 */
-	"iconName":"resources/icons/Icon~ipad.png",
+	"iconName":"resources/icons/72-72_icon_02_.png",
 
 	/**
 	 * @cfg {String} inputPath

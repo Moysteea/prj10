@@ -8,16 +8,6 @@ Ext.define("GNApp.view.Main", {
     	tabBarPosition: 'bottom',
     	fullscreen: true,
     	layout:'card',
-        listeners: {
-            activeitemchange: function (tabPanel, tab, oldTab) {
-            	if("sharemainview" == tab.id){
-            		if(flag){
-            			initialize();
-            		}
-            		flag = false;
-            	}
-            } 
-        },
         
         items: [
 				{xtype:'introduceView',style:'background-color:#fff'},

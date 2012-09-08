@@ -11,6 +11,11 @@ config:
 			   id:'titleText'
 		   },
 		   {
+			   xtype:'button',
+			   id:'informationBtn',
+			   align:'right'
+		   },
+		   {
 			xtype:'button',
 			align:'right',
 			id:'sponsorshipBtn',

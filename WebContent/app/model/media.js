@@ -20,14 +20,6 @@ Ext.define('GNApp.model.media', {
             {
                 mapping: 'image',
                 name: 'profile_image_url'
-            },
-            {
-                mapping: 'content',
-                name: 'description'
-            },
-            {
-                mapping: 'name',
-                name: 'name'
             }
         ]
     }
